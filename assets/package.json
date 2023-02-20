@@ -1,0 +1,10 @@
+{
+  "name": "prof-rem-stroi",
+  "version": "1.0.0",
+  "description": "Profremstroi theme assets",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Yuriy Lysyuk",
+  "license": "ISC",
+  "private": true
+}
