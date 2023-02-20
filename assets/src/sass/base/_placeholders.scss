@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+%transition {
+  transition: all 0.3s ease-out;
+}
+
+%container {
+  width: 100%;
+  max-width: $site-width;
+  margin: 0 auto;
+}

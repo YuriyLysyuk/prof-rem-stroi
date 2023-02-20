@@ -1,0 +1,27 @@
+@use './variables' as *;
+
+html,
+body {
+  font-family: $body-font;
+  font-weight: $body-font-weight;
+}
+
+html {
+  font-size: $basic-font-size;
+}
+
+body {
+  color: $text-color;
+  font-size: $paragraph;
+  line-height: $line-height;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $header-font;
+  font-weight: $header-font-weight;
+}
