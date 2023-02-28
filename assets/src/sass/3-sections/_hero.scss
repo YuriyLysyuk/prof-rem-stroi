@@ -1,0 +1,119 @@
+@use '../0-settings/placeholders';
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+
+// Components
+@use '../2-components/button';
+
+.hero {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  background-image: url('../img/hero-main.jpg');
+  background-repeat: no-repeat;
+  background-position: 44% center;
+  background-size: cover;
+
+  @include media('>=sm') {
+    min-height: 3.2rem;
+    padding-top: 8.6rem;
+    padding-bottom: 7.6rem;
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    min-height: 70rem;
+    padding-top: 17.6rem;
+    padding-bottom: 17.6rem;
+  }
+
+  &__inner {
+    @extend %container;
+    width: 100%;
+    padding: 1.6rem;
+    background-color: rgba(5, 5, 5, 0.53);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    text-align: center;
+
+    @include media('>=sm') {
+      max-width: 48.6rem;
+      padding: 1.7rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      max-width: 96rem;
+      padding: 3.7rem;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: $inverted-text-color;
+
+    @include media('>=sm') {
+      font-size: 2.8rem;
+      line-height: 3.2rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      font-size: 5.7rem;
+      line-height: 6.6rem;
+    }
+
+    & > span {
+      @extend %text-gradient;
+
+      @include media('>=sm') {
+        display: block;
+      }
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    max-width: 17rem;
+    margin-top: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: $inverted-text-color;
+
+    @include media('>=sm') {
+      max-width: 22rem;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin-top: 1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      max-width: 47.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 3.1rem;
+      font-size: 3.3rem;
+      line-height: 4rem;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    @include media('>=sm') {
+      margin-top: -2rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: -4rem;
+    }
+  }
+}
