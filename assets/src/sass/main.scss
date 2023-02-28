@@ -1,6 +1,5 @@
 // Base
-@use './base/normalize';
-@use './base/fonts';
-@use './base/variables';
-@use './base/typography';
+@use './base/base';
 
+// Sections
+@use './sections/hero';
