@@ -1,0 +1,70 @@
+@use '../0-settings/variables' as *;
+
+@property --btn-gradient-color-begin {
+  syntax: '<color>';
+  initial-value: #fff6d6;
+  inherits: false;
+}
+
+@property --btn-gradient-color-end {
+  syntax: '<color>';
+  initial-value: #fcd384;
+  inherits: false;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.7rem 3.8rem;
+  font-family: $body-font;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #644301;
+  background-image: radial-gradient(
+    40.75% 124.71% at 37.77% 10.67%,
+    var(--btn-gradient-color-begin) 0%,
+    var(--btn-gradient-color-end) 100%
+  );
+  border-radius: 1.3rem;
+  box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
+  transition: --btn-gradient-color-begin 0.3s, --btn-gradient-color-end 0.3s,
+    box-shadow 0.3s;
+
+  &:before,
+  &:after {
+    content: '';
+    width: 2.4rem;
+    height: 2.1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &:before {
+    margin-right: 1rem;
+    background-image: url(../img/icons/arrows-right.svg);
+  }
+
+  &:after {
+    margin-left: 1rem;
+    background-image: url(../img/icons/arrows-left.svg);
+  }
+
+  &:hover {
+    --btn-gradient-color-begin: #f8eabb;
+    --btn-gradient-color-end: #ffc960;
+    box-shadow: 0 0.2rem 0 0 #b57700,
+      0 3rem 2rem -2.7rem rgba(248, 234, 187, 0.79);
+  }
+
+  &:active {
+    --btn-gradient-color-begin: #ffe894;
+    --btn-gradient-color-end: #fab839;
+    box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
+  }
+}

@@ -1,5 +1,8 @@
 // Base
-@use './base/base';
+@use './1-base/base';
+
+// Components
+@use './2-components/button';
 
 // Sections
 @use './sections/hero';
