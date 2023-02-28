@@ -1,4 +1,5 @@
 @use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
 
 @property --btn-gradient-color-begin {
   syntax: '<color>';
@@ -16,11 +17,11 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 2.7rem 3.8rem;
+  padding: 1.4rem 2rem;
   font-family: $body-font;
   font-weight: 700;
-  font-size: 1.7rem;
-  line-height: 2.1rem;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
   letter-spacing: 0.085em;
   text-transform: uppercase;
   text-decoration: none;
@@ -30,29 +31,49 @@
     var(--btn-gradient-color-begin) 0%,
     var(--btn-gradient-color-end) 100%
   );
-  border-radius: 1.3rem;
+  border-radius: 0.7rem;
   box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
   transition: --btn-gradient-color-begin 0.3s, --btn-gradient-color-end 0.3s,
     box-shadow 0.3s;
 
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    padding: 2.7rem 3.8rem;
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+    border-radius: 1.3rem;
+  }
+
   &:before,
   &:after {
     content: '';
-    width: 2.4rem;
-    height: 2.1rem;
+    width: 1.2rem;
+    height: 1.1rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      width: 2.4rem;
+      height: 2.1rem;
+    }
   }
 
   &:before {
-    margin-right: 1rem;
+    margin-right: 0.4rem;
     background-image: url(../img/icons/arrows-right.svg);
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-right: 1rem;
+    }
   }
 
   &:after {
-    margin-left: 1rem;
+    margin-left: 0.4rem;
     background-image: url(../img/icons/arrows-left.svg);
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-left: 1rem;
+    }
   }
 
   &:hover {
