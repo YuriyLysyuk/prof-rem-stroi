@@ -1,0 +1,131 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.categories {
+  &__grid {
+    @extend %container;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+
+    @include media('>=sm') {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      gap: 3.5rem;
+    }
+  }
+
+  .category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem;
+    text-decoration: none;
+    border: 0.05rem solid rgba(0, 0, 0, 0.57);
+    filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.09));
+    border-radius: 0.8rem;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: 1.6rem;
+      border-radius: 1.3rem;
+    }
+
+    &__img,
+    &__shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__shadow {
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 9.6rem;
+        background-color: rgba(255, 255, 255, 0.91);
+        filter: blur(25.4169px);
+      }
+
+      &:before {
+        top: -5rem;
+      }
+
+      &:after {
+        bottom: -5rem;
+      }
+    }
+
+    &__title,
+    &__more {
+      position: relative;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+      }
+    }
+
+    &__title {
+      font-weight: 700;
+      color: #704f10;
+    }
+
+    &__more {
+      display: flex;
+      align-items: center;
+      color: #855700;
+
+      &:after {
+        content: '';
+        width: 1.2rem;
+        height: 1.1rem;
+        margin-left: 0.4rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url(../img/icons/arrows-right.svg);
+        @extend %transition;
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          width: 2.4rem;
+          height: 2.7rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &:hover {
+      .category__more:after {
+        margin-left: 1rem;
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          margin-left: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.numbers + .categories {
+  @include media('>=#{$mobile-menu-breakpoint}') {
+  }
+}
