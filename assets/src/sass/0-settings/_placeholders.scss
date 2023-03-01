@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './include-media' as *;
 
 %transition {
   transition: all 0.3s ease-out;
@@ -8,6 +9,16 @@
   width: 100%;
   max-width: $site-width;
   margin: 0 auto;
+  padding: 1.6rem;
+  box-sizing: content-box;
+
+  @include media('>=sm') {
+    padding: 2rem;
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    padding: 3.5rem;
+  }
 }
 
 %text-gradient {

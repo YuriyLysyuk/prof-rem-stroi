@@ -3,8 +3,8 @@
 @use '../0-settings/placeholders';
 
 .numbers {
-  padding-left: 0.7rem;
-  padding-right: 0.7rem;
+  @extend %container;
+  padding-top: 0;
 
   &__list {
     display: flex;
