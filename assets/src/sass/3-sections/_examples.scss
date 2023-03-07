@@ -1,0 +1,130 @@
+@use '../0-settings/placeholders';
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+
+.examples {
+  @extend %container;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 5.7rem;
+    line-height: 6.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: $text-color;
+    -webkit-text-stroke: 0.05rem rgba(112, 79, 16, 0.7);
+    text-align: center;
+
+    & > span {
+      background-image: linear-gradient(
+        145.56deg,
+        #fcd384 7.56%,
+        #855700 71.46%
+      );
+      @extend %text-gradient;
+
+      @include media('>=sm') {
+        display: block;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+}
+
+.example {
+  max-width: 56rem;
+  padding: 1.6rem;
+  background-color: #ffffff;
+  box-shadow: 0px 18px 80px rgba(0, 0, 0, 0.07),
+    0px 6.5703px 29.2013px rgba(0, 0, 0, 0.0482987),
+    0px 3.18976px 14.1767px rgba(0, 0, 0, 0.0389404),
+    0px 1.56368px 6.94968px rgba(0, 0, 0, 0.0310596),
+    0px 0.618281px 2.74791px rgba(0, 0, 0, 0.0217013);
+  border-radius: 13px;
+
+  &__title {
+    margin-top: 0.9rem;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 2.6rem;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #704f10;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  &__slider {
+    width: 60%;
+  }
+
+  &__text {
+    margin-left: 1.9rem;
+    width: calc(40% - 1.9rem);
+  }
+
+  .swiper {
+    .icv__img-b {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .swiper_example {
+    width: 100%;
+
+    .swiper-slide {
+      border: 0.1rem solid rgba(0, 0, 0, 0.57);
+      border-radius: 0.5rem;
+    }
+  }
+
+  .swiper_example-thumbs {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 0;
+
+    .swiper-slide {
+      width: 25%;
+      height: 100%;
+      border: 0.1rem solid rgba(0, 0, 0, 1);
+      border-radius: 0.5rem;
+      opacity: 0.4;
+    }
+
+    .swiper-slide-thumb-active {
+      border: 0.1rem solid rgba(0, 0, 0, 0.57);
+      opacity: 1;
+    }
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    text-rendering: auto;
+  }
+}
