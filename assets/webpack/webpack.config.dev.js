@@ -36,13 +36,13 @@ module.exports = merge(common, {
       {
         test: /\.js$/,
         include: JS_SRC_DIR,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         loader: 'babel-loader',
       },
 
       {
-        test: /\.s?css$/i,
-        exclude: /node_modules/,
+        test: /\.s?css$/,
+        // exclude: /node_modules/,
         use: [
           'style-loader',
           {
