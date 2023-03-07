@@ -67,6 +67,11 @@
     }
 
     & > span {
+      background-image: linear-gradient(
+        152.9deg,
+        #ffffff -19.44%,
+        #fdd484 45.29%
+      );
       @extend %text-gradient;
 
       @include media('>=sm') {
