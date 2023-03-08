@@ -9,14 +9,15 @@
   width: 100%;
   max-width: $site-width;
   margin: 0 auto;
-  padding: 1.6rem;
+  padding: $block-padding-mobile;
 
   @include media('>=sm') {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
-    padding: 3.5rem;
+    padding: 3.5rem $block-padding-pc;
   }
 }
 
