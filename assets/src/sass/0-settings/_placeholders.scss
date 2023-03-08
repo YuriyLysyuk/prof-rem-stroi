@@ -58,3 +58,27 @@
     display: block;
   }
 }
+
+%text-margin {
+  margin-bottom: calc($block-padding-mobile / 2);
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    margin-bottom: calc($block-padding-pc / 2);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%block-margin {
+  margin-bottom: calc($block-padding-mobile);
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    margin-bottom: calc($block-padding-pc);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

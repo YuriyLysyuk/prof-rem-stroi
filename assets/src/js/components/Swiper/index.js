@@ -62,7 +62,7 @@ exampleSwipers.forEach(({ swiperClass, thumbsClass }, i, swipers) => {
 const videoReviewsSwiper = new Swiper('.js-video-reviews', {
   grabCursor: true,
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 16,
   navigation: {
     enabled: true,
     nextEl: '.swiper-button-next',
@@ -81,7 +81,7 @@ const videoReviewsSwiper = new Swiper('.js-video-reviews', {
         fill: 'row',
         rows: 2,
       },
-      spaceBetween: 20,
+      spaceBetween: 16,
       navigation: {
         enabled: false,
       },
@@ -93,7 +93,7 @@ const videoReviewsSwiper = new Swiper('.js-video-reviews', {
         fill: 'row',
         rows: 2,
       },
-      spaceBetween: 35,
+      spaceBetween: 20,
       navigation: {
         enabled: false,
       },
