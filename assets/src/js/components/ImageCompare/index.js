@@ -1,7 +1,7 @@
 import ImageCompare from 'image-compare-viewer';
 import 'image-compare-viewer/src/styles/index.scss';
 
-import './ImageCompare.scss';
+import './_ImageCompare.scss';
 
 const viewers = document.querySelectorAll('.image-compare');
 

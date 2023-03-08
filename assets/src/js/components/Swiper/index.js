@@ -10,6 +10,18 @@ const exampleSwipers = [
     swiperClass: '.js-example-1',
     thumbsClass: '.js-example-thumbs-1',
   },
+  {
+    swiperClass: '.js-example-2',
+    thumbsClass: '.js-example-thumbs-2',
+  },
+  {
+    swiperClass: '.js-example-3',
+    thumbsClass: '.js-example-thumbs-3',
+  },
+  {
+    swiperClass: '.js-example-4',
+    thumbsClass: '.js-example-thumbs-4',
+  },
 ];
 
 const exampleSwiperOptions = {
