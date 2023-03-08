@@ -29,9 +29,9 @@
     width: 100%;
     padding: $block-padding-mobile;
     text-decoration: none;
-    border: $default-border;
     filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.09));
     border-radius: $default-radius;
+    box-shadow: $default-shadow;
     aspect-ratio: 3/2;
     overflow: hidden;
 

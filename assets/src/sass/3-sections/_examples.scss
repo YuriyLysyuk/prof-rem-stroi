@@ -113,7 +113,6 @@
   width: 100%;
 
   .swiper-slide {
-    border: $default-border;
     border-radius: $default-radius;
   }
 }
@@ -126,13 +125,11 @@
   .swiper-slide {
     width: 25%;
     height: 100%;
-    border: $default-border;
     border-radius: $default-radius;
     opacity: 0.4;
   }
 
   .swiper-slide-thumb-active {
-    border: $default-border;
     opacity: 1;
   }
 }
