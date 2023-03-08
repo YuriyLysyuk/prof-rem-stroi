@@ -5,18 +5,18 @@
 .categories {
   &__grid {
     @extend %container;
+
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: $block-padding-mobile;
 
     @include media('>=sm') {
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {
-      gap: 3.5rem;
+      gap: $block-padding-pc;
     }
   }
 
@@ -27,17 +27,16 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0.8rem;
+    padding: $block-padding-mobile;
     text-decoration: none;
-    border: 0.05rem solid rgba(0, 0, 0, 0.57);
+    border: $default-border;
     filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.09));
-    border-radius: 0.8rem;
+    border-radius: $default-radius;
     aspect-ratio: 3/2;
     overflow: hidden;
 
     @include media('>=#{$mobile-menu-breakpoint}') {
-      padding: 1.6rem;
-      border-radius: 1.3rem;
+      padding: $block-padding-pc;
     }
 
     &__img,
