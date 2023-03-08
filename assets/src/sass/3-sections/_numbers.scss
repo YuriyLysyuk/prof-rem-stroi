@@ -9,12 +9,10 @@
   &__list {
     display: flex;
     justify-content: space-around;
-    padding: 1.6rem;
+    padding: $block-padding-mobile;
     background-color: #fff;
     border-radius: 0.7rem;
-    box-shadow: 0px 0.993023px 39.7209px rgba(0, 0, 0, 0.07),
-      0px 0.221805px 8.87219px rgba(0, 0, 0, 0.0417275),
-      0px 0.0660371px 2.64148px rgba(0, 0, 0, 0.0282725);
+    box-shadow: $default-shadow;
 
     @include media('>=sm') {
       max-width: 43rem;
@@ -24,7 +22,7 @@
 
     @include media('>=#{$mobile-menu-breakpoint}') {
       max-width: 86rem;
-      padding: 1.9rem;
+      padding: $block-padding-pc;
     }
   }
 
@@ -32,8 +30,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-left: calc($block-padding-mobile / 2);
+    margin-right: calc($block-padding-mobile / 2);
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-left: calc($block-padding-pc / 2);
+      margin-right: calc($block-padding-pc / 2);
+    }
+
+    & > * {
+      @extend %text-margin;
+    }
 
     &:first-child {
       margin-left: 0;
@@ -65,7 +72,6 @@
     }
 
     & > .desc {
-      margin-top: 0.5rem;
       font-size: 0.8rem;
       line-height: 1.1rem;
       text-align: center;
