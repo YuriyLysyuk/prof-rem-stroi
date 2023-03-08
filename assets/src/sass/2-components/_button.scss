@@ -33,7 +33,7 @@
     var(--btn-gradient-color-begin) 0%,
     var(--btn-gradient-color-end) 100%
   );
-  border-radius: 0.7rem;
+  border-radius: $default-radius;
   box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
   transition: --btn-gradient-color-begin 0.3s, --btn-gradient-color-end 0.3s,
     box-shadow 0.3s;
@@ -42,7 +42,6 @@
     padding: 2.7rem 3.8rem;
     font-size: 1.7rem;
     line-height: 2.1rem;
-    border-radius: 1.3rem;
   }
 
   &:before,

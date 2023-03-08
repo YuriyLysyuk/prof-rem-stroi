@@ -33,7 +33,7 @@
     padding: 1.6rem;
     background-color: rgba(5, 5, 5, 0.53);
     backdrop-filter: blur(5px);
-    border-radius: 25px;
+    border-radius: $default-radius;
     text-align: center;
 
     @include media('>=sm') {
