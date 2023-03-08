@@ -26,3 +26,34 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+
+%section-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $text-color;
+  -webkit-text-stroke: 0.03rem rgba(112, 79, 16, 0.7);
+  text-align: center;
+
+  @include media('>=sm') {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    -webkit-text-stroke: 0.05rem rgba(112, 79, 16, 0.7);
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    font-size: 5.7rem;
+    line-height: 6.6rem;
+  }
+}
+
+%section-title-span {
+  @extend %text-gradient;
+
+  @include media('>=sm') {
+    display: block;
+  }
+}
