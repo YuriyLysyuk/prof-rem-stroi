@@ -58,3 +58,45 @@ exampleSwipers.forEach(({ swiperClass, thumbsClass }, i, swipers) => {
     },
   });
 });
+
+const videoReviewsSwiper = new Swiper('.js-video-reviews', {
+  grabCursor: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    enabled: true,
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    576: {
+      grabCursor: true,
+      slidesPerView: 2,
+      grid: {
+        fill: 'row',
+        rows: 2,
+      },
+      spaceBetween: 20,
+      navigation: {
+        enabled: false,
+      },
+    },
+    992: {
+      grabCursor: true,
+      slidesPerView: 2,
+      grid: {
+        fill: 'row',
+        rows: 2,
+      },
+      spaceBetween: 35,
+      navigation: {
+        enabled: false,
+      },
+    },
+  },
+});
