@@ -10,7 +10,6 @@
   max-width: $site-width;
   margin: 0 auto;
   padding: 1.6rem;
-  box-sizing: content-box;
 
   @include media('>=sm') {
     padding: 2rem;
