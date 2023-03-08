@@ -17,7 +17,7 @@
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
-    padding: 3.5rem $block-padding-pc;
+    padding: 5rem $block-padding-pc;
   }
 }
 
