@@ -66,12 +66,16 @@
 
     & > .desc {
       margin-top: 0.5rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       line-height: 1.1rem;
       text-align: center;
       letter-spacing: 0.085em;
       text-transform: uppercase;
       color: #3f3f3f;
+
+      @include media('>=sm') {
+        font-size: 0.9rem;
+      }
 
       @include media('>=#{$mobile-menu-breakpoint}') {
         font-size: 1.8rem;
