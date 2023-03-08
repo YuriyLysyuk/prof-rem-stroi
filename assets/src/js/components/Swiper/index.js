@@ -4,6 +4,8 @@ import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/swiper-bundle.css';
 
+import './_Swiper.scss';
+
 // Список с классами слайдеров для примеров
 const exampleSwipers = [
   {

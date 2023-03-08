@@ -1,0 +1,30 @@
+.swiper {
+  --swiper-navigation-size: 3.8rem;
+  --swiper-navigation-color: #fff;
+
+  width: 100%;
+
+  .icv__img-b {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  text-rendering: auto;
+}
