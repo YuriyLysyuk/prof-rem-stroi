@@ -3,10 +3,47 @@
 @use '../0-settings/placeholders';
 
 .video-reviews {
-  @extend %container;
+  background-image: url('../img/video-reviews/bg-reviews.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    @extend %container;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__title {
     @extend %section-title;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      z-index: -1;
+      filter: blur(1.6rem);
+
+      @include media('>=sm') {
+        filter: blur(2.6rem);
+      }
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+        filter: blur(5.6rem);
+      }
+    }
 
     & > span {
       @extend %section-title-span;
