@@ -1,0 +1,21 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/placeholders';
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #161616;
+  @extend %transition;
+
+  &:hover {
+    text-shadow: 0 0 0.9rem #fcd384;
+  }
+
+  &:active {
+    color: #644301;
+    text-shadow: none;
+  }
+}

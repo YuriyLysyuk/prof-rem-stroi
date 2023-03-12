@@ -2,6 +2,7 @@
 @use './1-base/base';
 
 // Sections
+@use './3-sections/header';
 @use './3-sections/hero';
 @use './3-sections/numbers';
 @use './3-sections/categories';

@@ -23,8 +23,8 @@
 
   @include media('>=#{$mobile-menu-breakpoint}') {
     min-height: 70rem;
-    padding-top: 17.6rem;
-    padding-bottom: 17.6rem;
+    padding-top: 19rem;
+    padding-bottom: 19rem;
   }
 
   &__inner {

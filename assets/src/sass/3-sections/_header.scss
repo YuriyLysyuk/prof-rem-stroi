@@ -1,0 +1,73 @@
+@use '../0-settings/placeholders';
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  margin-top: 1rem;
+  z-index: 100;
+
+  &__inner {
+    @extend %container;
+    @extend %blur-white-bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    height: 12rem;
+  }
+
+  &__nav {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__nav-item {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  &__nav-link {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__phone {
+    font-weight: 500;
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+
+  &__time {
+    margin-top: 0.7rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  &__promise {
+    margin-top: 0.7rem;
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    color: #ff5841;
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 12rem;
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -7,7 +7,39 @@
     <title>Главная</title>
   </head>
   <body>
-    <header></header>
+    <header class="header">
+      <div class="header__inner">
+        <a href="/" class="logo">
+          <img
+            class="logo__img"
+            src="./img/logo-2x.png"
+            alt="Логотип Профремонт"
+          />
+        </a>
+
+        <ul class="header__nav">
+          <li class="header__nav-item">
+            <a href="#examples" class="header__nav-link">Примеры работ</a>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="#video-reviews" class="header__nav-link">Отзывы</a>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="#tariffs" class="header__nav-link">Тарифы</a>
+          </li>
+        </ul>
+
+        <div class="header__contacts">
+          <a href="#" class="header__phone">+7 (925) 421-17-45</a>
+
+          <p class="header__time">Ежедневно с 8:00 до 22:00</p>
+
+          <p class="header__promise">Перезвоним через 15 минут!</p>
+        </div>
+      </div>
+    </header>
 
     <main>
       <section class="hero">
@@ -133,7 +165,7 @@
         </div>
       </section>
 
-      <section class="examples">
+      <section class="examples" id="examples">
         <h2 class="examples__title">
           <span>Примеры наших работ</span> и их стоимость
         </h2>
@@ -585,7 +617,7 @@
         </div>
       </section>
 
-      <section class="video-reviews">
+      <section class="video-reviews" id="video-reviews">
         <div class="video-reviews__inner">
           <h2 class="video-reviews__title">
             <span>Видео-отзывы</span> о выполненных работах
@@ -679,7 +711,7 @@
         </div>
       </section>
 
-      <section class="tariffs">
+      <section class="tariffs" id="tariffs">
         <div class="tariffs__inner">
           <h2 class="tariffs__title">
             <span>Калькулятор</span> стоимости ремонта
