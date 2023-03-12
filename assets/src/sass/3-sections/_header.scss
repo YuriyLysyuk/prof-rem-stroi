@@ -14,13 +14,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0;
-    height: 12rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 5rem;
+
+    @include media('>=sm') {
+      height: 6.5rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      height: 12rem;
+    }
   }
 
   &__nav {
-    display: flex;
+    display: none;
     list-style-type: none;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      display: flex;
+    }
   }
 
   &__nav-item {
@@ -43,28 +56,59 @@
 
   &__phone {
     font-weight: 500;
-    font-size: 2.3rem;
-    line-height: 2.8rem;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      font-size: 2.3rem;
+      line-height: 2.8rem;
+    }
   }
 
   &__time {
-    margin-top: 0.7rem;
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: 0.7rem;
+      font-size: 2.3rem;
+      line-height: 2.8rem;
+    }
   }
 
   &__promise {
-    margin-top: 0.7rem;
+    display: none;
     font-weight: 700;
-    font-size: 1.7rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     color: #ff5841;
+
+    @include media('>=sm') {
+      display: block;
+      margin-top: 0.4rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: 0.7rem;
+      font-size: 1.7rem;
+      line-height: 2rem;
+    }
   }
 }
 
 .logo {
+  display: flex;
   width: 100%;
-  max-width: 12rem;
+  max-width: 5rem;
+
+  @include media('>=sm') {
+    max-width: 6.5rem;
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    max-width: 12rem;
+  }
 
   &__img {
     max-width: 100%;
