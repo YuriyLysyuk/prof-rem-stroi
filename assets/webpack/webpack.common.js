@@ -4,11 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const SRC_DIR = path.resolve(__dirname, '../src');
 const BUILD_DIR = path.resolve(__dirname, '../build');
-const JS_SRC_DIR = SRC_DIR + '/js';
+const JS_DIR = SRC_DIR + '/js';
 
 module.exports = {
+  context: SRC_DIR,
+
   entry: {
-    main: JS_SRC_DIR + '/main.js',
+    main: JS_DIR + '/main.js',
   },
 
   output: {
@@ -31,12 +33,6 @@ module.exports = {
     }),
   ],
 
-  resolve: {
-    alias: {
-      '~': SRC_DIR,
-    },
-  },
-
   module: {
     rules: [
       {
@@ -45,8 +41,19 @@ module.exports = {
       },
 
       {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(ico|jpg|jpeg|png|svg)(\?.*)?$/,
         type: 'asset',
+        generator: {
+          filename: '[path][name].[ext]',
+        },
+      },
+
+      {
+        test: /\.(woff|woff2)(\?.*)?$/,
+        type: 'asset',
+        generator: {
+          filename: '[path][name][ext]',
+        },
       },
     ],
   },

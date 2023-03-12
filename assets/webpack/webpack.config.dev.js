@@ -1,11 +1,10 @@
 const path = require('path');
-const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
 const common = require('./webpack.common.js');
 
 const SRC_DIR = path.resolve(__dirname, '../src');
-const JS_SRC_DIR = SRC_DIR + '/js';
+const JS_DIR = SRC_DIR + '/js';
 
 module.exports = merge(common, {
   target: 'web',
@@ -35,14 +34,12 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.js$/,
-        include: JS_SRC_DIR,
-        // exclude: /node_modules/,
+        include: JS_DIR,
         loader: 'babel-loader',
       },
 
       {
         test: /\.s?css$/,
-        // exclude: /node_modules/,
         use: [
           'style-loader',
           {
