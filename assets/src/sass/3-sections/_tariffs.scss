@@ -29,11 +29,12 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $block-padding-mobile;
+    gap: calc($block-padding-mobile * 2);
     margin-top: $block-padding-mobile;
 
     @include media('>=sm') {
       grid-template-columns: repeat(3, 1fr);
+      gap: $block-padding-mobile;
       margin-top: 3rem;
     }
 
@@ -51,33 +52,51 @@
     &:before,
     &:after {
       content: '';
-      width: 50%;
+      width: 100%;
       background-repeat: no-repeat;
+      background-size: contain;
     }
 
     &:before {
       background-image: url(../img/tariffs/line-top-bottom.svg);
-      background-position: top right;
+      background-position: bottom 0.6rem right;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        background-position: bottom 1.1rem right;
+      }
     }
 
     &:after {
       background-image: url(../img/tariffs/line-bottom-top.svg);
-      background-position: top left;
+      background-position: bottom 0.6rem left;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        background-position: bottom 1.1rem left;
+      }
     }
 
     .text {
-      display: flex;
+      display: none;
       flex-direction: column;
       margin-left: 2rem;
       margin-right: 2rem;
       font-weight: 700;
-      font-size: 2.1rem;
-      line-height: 2.6rem;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
       text-align: center;
       letter-spacing: 0.085em;
       white-space: nowrap;
       text-transform: uppercase;
       color: #644201;
+
+      @include media('>=sm') {
+        display: flex;
+      }
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        font-size: 2.1rem;
+        line-height: 2.6rem;
+      }
 
       &:before {
         content: '';
@@ -94,6 +113,7 @@
 
 .tariff {
   position: relative;
+  max-width: 20rem;
   padding: $block-padding-mobile;
   font-size: 0.9rem;
   line-height: 1.1rem;
@@ -101,6 +121,10 @@
   background-color: #ffffff;
   box-shadow: $default-shadow;
   border-radius: $default-radius;
+
+  @include media('>=sm') {
+    max-width: 100%;
+  }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
     padding: $block-padding-pc;
@@ -141,14 +165,14 @@
   }
 
   & > * {
-    @extend %block-margin;
+    @extend %text-margin;
   }
 
   &__title {
     font-family: $body-font;
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 2.1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     text-align: center;
     letter-spacing: 0.01em;
     color: #704f10;
@@ -210,26 +234,35 @@
     right: $block-padding-mobile;
     display: flex;
     flex-direction: column;
-    padding: 0.9rem;
+    padding: 0.5rem;
     font-weight: 700;
-    font-size: 1.3rem;
-    line-height: 1.6rem;
+    font-size: 0.7rem;
+    line-height: 0.9rem;
     text-align: center;
 
     @include media('>=#{$mobile-menu-breakpoint}') {
       bottom: -$block-padding-pc;
       left: $block-padding-pc;
       right: $block-padding-pc;
+      padding: 0.9rem;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
     }
 
     &:before,
     &:after {
       content: none;
     }
+
     & > span {
-      font-size: 1.1rem;
-      line-height: 1.3rem;
+      font-size: 0.6rem;
+      line-height: 0.7rem;
       color: rgba(100, 67, 1, 0.65);
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+      }
     }
   }
 
@@ -242,13 +275,18 @@
 
     &:after {
       content: '';
-      width: 1.6rem;
-      height: 2rem;
+      width: 0.9rem;
+      height: 1.1rem;
       margin-left: 1rem;
       background-image: url(../img/icons/arrow-down.svg);
       background-repeat: no-repeat;
       background-size: contain;
       transition: transform 0.3s ease-in-out;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        width: 1.6rem;
+        height: 2rem;
+      }
     }
   }
 
@@ -271,12 +309,18 @@
       &:before {
         content: '';
         position: absolute;
-        top: 0.7rem;
+        top: 0.3rem;
         left: 0;
-        width: 0.8rem;
-        height: 0.8rem;
+        width: 0.5rem;
+        height: 0.5rem;
         background-color: #d64417;
         border-radius: 50%;
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          top: 0.7rem;
+          width: 0.8rem;
+          height: 0.8rem;
+        }
       }
     }
   }
