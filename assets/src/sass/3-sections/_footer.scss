@@ -1,0 +1,95 @@
+@use '../0-settings/placeholders';
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+
+.footer {
+  color: #ffffff;
+  background-color: #5f5f5f;
+
+  &__inner {
+    @extend %container;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media('>=sm') {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.085em;
+
+    @include media('>=sm') {
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+      white-space: nowrap;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+
+    .mark {
+      margin-right: 0.5rem;
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+  }
+
+  &__requisits {
+    margin-top: $block-padding-mobile;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #d6d6d6;
+
+    @include media('>=sm') {
+      margin-top: 0;
+      margin-left: $block-padding-mobile;
+      margin-right: $block-padding-mobile;
+      white-space: nowrap;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-left: $block-padding-pc;
+      margin-right: $block-padding-pc;
+      font-size: 1.7rem;
+      line-height: 2.1rem;
+    }
+  }
+
+  &__note {
+    margin-top: $block-padding-mobile;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #d6d6d6;
+
+    @include media('>=sm') {
+      margin-top: 0;
+      margin-left: $block-padding-mobile;
+      margin-right: $block-padding-mobile;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+}
