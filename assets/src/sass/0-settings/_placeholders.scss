@@ -7,7 +7,7 @@
 
 %container {
   width: 100%;
-  max-width: $site-width;
+  max-width: calc($site-width + ($block-padding-mobile * 2));
   margin: 0 auto;
   padding: $block-padding-mobile;
 
@@ -17,6 +17,7 @@
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
+    max-width: calc($site-width + ($block-padding-pc * 2));
     padding: 5rem $block-padding-pc;
   }
 }
