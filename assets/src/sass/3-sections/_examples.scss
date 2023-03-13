@@ -103,6 +103,20 @@
       margin-left: $block-padding-pc;
     }
 
+    ul {
+      list-style-position: outside;
+      list-style-type: disc;
+      padding-left: 1.6rem;
+
+      li {
+        margin-bottom: 0.2rem;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     & > * {
       @extend %text-margin;
     }
