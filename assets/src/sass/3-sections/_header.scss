@@ -28,12 +28,26 @@
     }
   }
 
+  &__title {
+    display: none;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      display: block;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 500;
+      font-size: 2.3rem;
+      line-height: 1;
+    }
+  }
+
   &__nav {
     display: none;
     list-style-type: none;
 
     @include media('>=#{$mobile-menu-breakpoint}') {
       display: flex;
+      justify-content: center;
     }
   }
 
