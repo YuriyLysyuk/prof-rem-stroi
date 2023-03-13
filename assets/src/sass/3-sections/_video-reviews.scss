@@ -1,6 +1,7 @@
 @use '../0-settings/variables' as *;
 @use '../0-settings/include-media' as *;
 @use '../0-settings/placeholders';
+@use '../0-settings/mixins' as *;
 
 .video-reviews {
   background-image: url('../img/video-reviews/bg-reviews.jpg');
@@ -100,6 +101,10 @@
     @include media('>=#{$mobile-menu-breakpoint}') {
       font-size: 1.9rem;
       line-height: 2.3rem;
+    }
+
+    & > * {
+      @include ellipsis-text();
     }
   }
 
