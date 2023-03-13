@@ -3,19 +3,20 @@
 @use '../0-settings/include-media' as *;
 
 .header {
+  @extend %blur-white-bg;
   position: fixed;
   width: 100%;
-  margin-top: 1rem;
+  border-bottom: 0.2rem solid #3f3f3f;
+  box-shadow: $default-shadow;
   z-index: 100;
 
   &__inner {
     @extend %container;
-    @extend %blur-white-bg;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     height: 5rem;
 
     @include media('>=sm') {
