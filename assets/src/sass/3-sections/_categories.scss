@@ -5,11 +5,12 @@
 .categories {
   &__grid {
     @extend %container;
-
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
     gap: $block-padding-mobile;
+    padding-top: 0;
+    padding-bottom: 0;
 
     @include media('>=sm') {
       grid-template-columns: repeat(3, 1fr);
