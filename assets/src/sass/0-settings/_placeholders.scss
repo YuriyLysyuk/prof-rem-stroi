@@ -9,16 +9,16 @@
   width: 100%;
   max-width: calc($site-width + ($block-padding-mobile * 2));
   margin: 0 auto;
-  padding: $block-padding-mobile;
+  padding: 3.3rem $block-padding-mobile;
 
   @include media('>=sm') {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
     max-width: calc($site-width + ($block-padding-pc * 2));
-    padding: 5rem $block-padding-pc;
+    padding: 7rem $block-padding-pc;
   }
 }
 
@@ -95,7 +95,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: -1;
     filter: blur(1rem);
   }
