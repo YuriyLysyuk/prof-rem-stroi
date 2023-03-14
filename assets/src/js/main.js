@@ -1,3 +1,6 @@
+// Helpers
+import './helpers/header';
+
 // Components
 import './components/ImageCompare';
 import './components/Swiper';
