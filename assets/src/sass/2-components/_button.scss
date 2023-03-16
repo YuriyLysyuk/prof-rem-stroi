@@ -33,6 +33,7 @@
     var(--btn-gradient-color-begin) 0%,
     var(--btn-gradient-color-end) 100%
   );
+  border-width: 0;
   border-radius: $default-radius;
   box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
   transition: --btn-gradient-color-begin 0.3s, --btn-gradient-color-end 0.3s,
@@ -47,16 +48,11 @@
   &:before,
   &:after {
     content: '';
-    width: 1.2rem;
-    height: 1.1rem;
+    width: calc(1em * 3 / 2);
+    height: 1em;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
-    @include media('>=#{$mobile-menu-breakpoint}') {
-      width: 2.4rem;
-      height: 2.1rem;
-    }
   }
 
   &:before {
@@ -82,11 +78,24 @@
     --btn-gradient-color-end: #ffc960;
     box-shadow: 0 0.2rem 0 0 #b57700,
       0 3rem 2rem -2.7rem rgba(248, 234, 187, 0.79);
+    cursor: pointer;
   }
 
   &:active {
     --btn-gradient-color-begin: #ffe894;
     --btn-gradient-color-end: #fab839;
     box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
+  }
+
+  &_small {
+    padding: 1rem 1.9rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: 1.7rem 3.5rem;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
   }
 }
