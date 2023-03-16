@@ -57,10 +57,16 @@ h2 {
       display: block;
     }
   }
+}
 
-  &.inverted-text {
+.text_inverted {
+  color: $inverted-text-color;
+
+  h1,
+  h2 {
     color: $inverted-text-color;
 
+    & > span,
     & > span {
       background-image: linear-gradient(
         152.9deg,

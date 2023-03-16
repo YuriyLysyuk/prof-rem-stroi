@@ -36,6 +36,10 @@
       max-width: 96rem;
       padding: calc($block-padding-pc * 2);
     }
+
+    & > * {
+      @extend %text-margin;
+    }
   }
 
   &_main {
@@ -53,23 +57,54 @@
     }
   }
 
+  &_delivery {
+    background-image: url('../img/hero/bg-hero-delivery.jpg');
+    background-position: center;
+
+    .hero__inner {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -4.5rem;
+        left: -2rem;
+        width: 10rem;
+        height: 10rem;
+        background-image: url('../img/hero/roulette.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include media('>=sm') {
+          top: -6rem;
+          left: -6rem;
+          width: 15rem;
+          height: 15rem;
+        }
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          top: -9.5rem;
+          left: -9rem;
+          width: 27rem;
+          height: 27rem;
+        }
+      }
+    }
+  }
+
   &__desc {
     width: 100%;
-    margin-top: 0.3rem;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.2rem;
     line-height: 1.5rem;
-    color: $inverted-text-color;
 
     @include media('>=sm') {
       font-size: 1.5rem;
       line-height: 1.8rem;
-      margin-top: 1rem;
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {
-      margin-top: 1.6rem;
       font-size: 3.3rem;
       line-height: 4rem;
     }
