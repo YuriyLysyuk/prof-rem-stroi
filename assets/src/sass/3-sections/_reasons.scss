@@ -21,16 +21,6 @@
     }
   }
 
-  &__title {
-    @extend %section-title;
-
-    & > span {
-      @extend %section-title-span;
-
-      background-image: linear-gradient(180deg, #fcd384 0%, #855700 60.86%);
-    }
-  }
-
   &__list {
     margin-top: $block-padding-mobile;
     list-style-type: none;

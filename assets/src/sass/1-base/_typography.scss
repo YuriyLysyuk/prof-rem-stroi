@@ -1,5 +1,6 @@
 @use '../0-settings/variables' as *;
 @use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
 
 html,
 body {
@@ -27,20 +28,45 @@ h3 {
   font-weight: $header-font-weight;
 }
 
-h1 {
+h1,
+h2 {
   font-size: 2rem;
   line-height: 2.3rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   text-align: center;
+  -webkit-text-stroke: 0.03rem rgba(112, 79, 16, 0.7);
+  color: $text-color;
 
   @include media('>=sm') {
     font-size: 2.8rem;
     line-height: 3.2rem;
+    -webkit-text-stroke: 0.05rem rgba(112, 79, 16, 0.7);
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
     font-size: 5.7rem;
     line-height: 6.6rem;
+  }
+
+  & > span {
+    @extend %text-gradient;
+    background-image: linear-gradient(145deg, #fcd384 0%, #855700 100%);
+
+    @include media('>=sm') {
+      display: block;
+    }
+  }
+
+  &.inverted-text {
+    color: $inverted-text-color;
+
+    & > span {
+      background-image: linear-gradient(
+        152.9deg,
+        #ffffff -19.44%,
+        #fdd484 45.29%
+      );
+    }
   }
 }
