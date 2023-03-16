@@ -1,0 +1,85 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.smeta {
+  @extend %container-wide;
+
+  &__inner {
+    @extend %container;
+    position: relative;
+    width: 100%;
+    padding: $block-padding-mobile;
+    text-align: center;
+    background-color: #fff;
+    border-radius: $default-radius;
+    box-shadow: $default-shadow;
+    overflow: hidden;
+    z-index: 0;
+
+    @include media('>=sm') {
+      text-align: left;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: calc($block-padding-pc * 2);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      @include media('>=sm') {
+        background-image: url('../img/smeta/smeta.png');
+        background-position: bottom -2rem right -2rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    h2 {
+      text-align: center;
+
+      @include media('>=sm') {
+        text-align: left;
+      }
+    }
+
+    h2,
+    .btn {
+      margin-bottom: 1.5rem;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__text {
+    @include media('>=sm') {
+      max-width: 28rem;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      max-width: 50rem;
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    & > * {
+      @extend %text-margin;
+    }
+  }
+
+  &__tariffs {
+    font-weight: 700;
+    color: #704f10;
+  }
+}

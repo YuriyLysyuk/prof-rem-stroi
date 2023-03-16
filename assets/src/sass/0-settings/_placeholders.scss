@@ -22,6 +22,15 @@
   }
 }
 
+%container-wide {
+  @extend %container;
+  max-width: 100%;
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    max-width: 100%;
+  }
+}
+
 %text-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
