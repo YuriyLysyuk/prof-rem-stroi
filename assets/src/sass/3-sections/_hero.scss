@@ -6,31 +6,23 @@
 @use '../2-components/button';
 
 .hero {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
-  background-image: url('../img/hero-main.jpg');
+  padding: 10rem $block-padding-mobile;
   background-repeat: no-repeat;
-  background-position: 44% center;
   background-size: cover;
 
   @include media('>=sm') {
-    min-height: 3.2rem;
     padding-top: 8.6rem;
     padding-bottom: 7.6rem;
   }
 
   @include media('>=#{$mobile-menu-breakpoint}') {
-    min-height: 70rem;
-    padding-top: 19rem;
-    padding-bottom: 19rem;
+    padding: 19rem $block-padding-pc;
   }
 
   &__inner {
     @extend %container;
     width: 100%;
-    padding: 1.6rem;
+    padding: $block-padding-mobile;
     background-color: rgba(5, 5, 5, 0.53);
     backdrop-filter: blur(5px);
     border-radius: $default-radius;
@@ -38,18 +30,31 @@
 
     @include media('>=sm') {
       max-width: 48.6rem;
-      padding: 1.7rem;
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {
       max-width: 96rem;
-      padding: 3.7rem;
+      padding: calc($block-padding-pc * 2);
+    }
+  }
+
+  &_main {
+    background-image: url('../img/hero-main.jpg');
+    background-position: 44% center;
+
+    .hero__inner {
+      @include media('>=sm') {
+        padding-bottom: calc($block-padding-mobile + 1.3rem);
+      }
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        padding-bottom: calc($block-padding-pc * 2 + 3.1rem);
+      }
     }
   }
 
   &__desc {
     width: 100%;
-    max-width: 17rem;
     margin-top: 0.3rem;
     margin-left: auto;
     margin-right: auto;
@@ -58,17 +63,13 @@
     color: $inverted-text-color;
 
     @include media('>=sm') {
-      max-width: 22rem;
       font-size: 1.5rem;
       line-height: 1.8rem;
       margin-top: 1rem;
-      margin-bottom: 1.3rem;
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {
-      max-width: 47.2rem;
       margin-top: 1.6rem;
-      margin-bottom: 3.1rem;
       font-size: 3.3rem;
       line-height: 4rem;
     }
