@@ -1,4 +1,5 @@
 @use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
 
 html,
 body {
@@ -24,4 +25,22 @@ h2,
 h3 {
   font-family: $header-font;
   font-weight: $header-font-weight;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include media('>=sm') {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    font-size: 5.7rem;
+    line-height: 6.6rem;
+  }
 }

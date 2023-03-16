@@ -48,23 +48,7 @@
   }
 
   &__title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 2rem;
-    line-height: 2.3rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
     color: $inverted-text-color;
-
-    @include media('>=sm') {
-      font-size: 2.8rem;
-      line-height: 3.2rem;
-    }
-
-    @include media('>=#{$mobile-menu-breakpoint}') {
-      font-size: 5.7rem;
-      line-height: 6.6rem;
-    }
 
     & > span {
       background-image: linear-gradient(
