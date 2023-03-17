@@ -14,11 +14,16 @@ html {
 
 body {
   color: $text-color;
-  font-size: $paragraph;
-  line-height: $line-height;
+  font-size: $paragraph-mobile;
+  line-height: $line-height-mobile;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    font-size: $paragraph-pc;
+    line-height: $line-height-pc;
+  }
 }
 
 h1,
@@ -56,6 +61,17 @@ h2 {
     @include media('>=sm') {
       display: block;
     }
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.01em;
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    font-size: 2.2rem;
+    line-height: 2.7rem;
   }
 }
 

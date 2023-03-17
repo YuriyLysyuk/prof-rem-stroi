@@ -7,7 +7,7 @@
   position: fixed;
   width: 100%;
   box-shadow: $default-shadow;
-  z-index: 100;
+  z-index: $z-header;
 
   &__inner {
     @extend %container;
@@ -152,6 +152,7 @@
 
 .logo {
   display: flex;
+  max-width: 12rem;
   height: 100%;
 
   &__img {

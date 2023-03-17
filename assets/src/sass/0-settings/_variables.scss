@@ -10,8 +10,10 @@ $header-font-weight: 400;
 
 // For REM / EM
 $basic-font-size: 62.5%;
-$paragraph: 1.6rem;
-$line-height: 2.5rem;
+$paragraph-mobile: 1.2rem;
+$line-height-mobile: 1.5rem;
+$paragraph-pc: 1.6rem;
+$line-height-pc: 2.5rem;
 
 // Mixed colors
 $text-color: #393939;
@@ -23,6 +25,13 @@ $block-padding-pc: 2rem;
 $block-padding-mobile: 1.6rem;
 $default-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.13);
 $default-radius: 1rem;
+$default-transition-duration: 0.3s;
+$default-transition-function: ease-in-out;
 
 // Mobile menu breakpoint
 $mobile-menu-breakpoint: 'lg';
+
+// z-index
+$z-header: 10;
+$z-modal-overlay: 20;
+$z-modal: 30;

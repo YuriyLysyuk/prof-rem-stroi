@@ -954,7 +954,9 @@
             <span>смета на ремонт?</span>
           </h2>
 
-          <button class="btn btn_small">Присылайте её нам</button>
+          <button class="btn btn_small" type="button" data-modal-open="smeta">
+            Присылайте её нам
+          </button>
 
           <div class="smeta__text">
             <p>
@@ -983,5 +985,24 @@
         </div>
       </div>
     </footer>
+
+    <section class="modal hidden" data-modal="smeta">
+      <div class="modal__header">
+        <h3 class="modal__title">Отправка сметы</h3>
+
+        <button class="modal__close" type="button" data-modal-close="smeta">
+          x
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <p>Здесь будет форма отправки сметы</p>
+
+        <button class="btn btn_small" type="button">Отправить</button>
+      </div>
+    </section>
+
+    <!-- Оверлей для модалок, всегда один -->
+    <div class="js-overlay overlay hidden"></div>
   </body>
 </html>
