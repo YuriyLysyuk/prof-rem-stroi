@@ -38,6 +38,7 @@
   box-shadow: 0 0.2rem 0 0 #b57700, 0 0 2rem -2.7rem rgba(248, 234, 187, 0.79);
   transition: --btn-gradient-color-begin 0.3s, --btn-gradient-color-end 0.3s,
     box-shadow 0.3s;
+  user-select: none;
 
   @include media('>=#{$mobile-menu-breakpoint}') {
     padding: 2.7rem 3.8rem;
