@@ -1,0 +1,77 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  thead {
+    tr {
+      th {
+        p {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+          padding: 0.4rem 0.9rem;
+          font-weight: 600;
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          text-align: center;
+          background-color: #fcd384;
+          border-radius: $default-radius;
+
+          @include media('>=#{$mobile-menu-breakpoint}') {
+            padding: 0.9rem;
+            font-size: 2.5rem;
+            line-height: 3rem;
+          }
+        }
+
+        &:first-of-type p {
+          margin-left: 0;
+        }
+
+        &:last-of-type p {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: transparent;
+      border-bottom: solid 0.1rem #dcdcdc;
+      @extend %transition;
+
+      &:hover {
+        background-color: #ebebeb;
+      }
+
+      td {
+        padding: 0.8rem;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          padding: 1.3rem;
+          font-size: 2.1rem;
+          line-height: 2.6rem;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
