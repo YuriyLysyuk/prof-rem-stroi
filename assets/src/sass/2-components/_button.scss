@@ -99,4 +99,23 @@
       line-height: 1.8rem;
     }
   }
+
+  &_tiny {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    text-transform: none;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: 0.7rem 2rem;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
 }
