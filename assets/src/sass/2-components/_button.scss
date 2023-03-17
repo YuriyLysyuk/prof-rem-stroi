@@ -118,4 +118,29 @@
     }
   }
 
+  &_ghost {
+    --btn-gradient-color-begin: transparent;
+    --btn-gradient-color-end: transparent;
+    background-color: transparent;
+    background-image: radial-gradient(
+      86.49% 86.49% at 50% 13.51%,
+      var(--btn-gradient-color-begin) 0%,
+      var(--btn-gradient-color-end) 100%
+    );
+    border: 0.1rem solid #96660b;
+    box-shadow: none;
+
+    &:hover {
+      --btn-gradient-color-begin: #fff;
+      --btn-gradient-color-end: #fff;
+      background-color: #fff;
+      box-shadow: 0 0.2rem 0.3rem 0 rgba(252, 211, 132, 0.64);
+    }
+
+    &:active {
+      --btn-gradient-color-begin: #a8a8a8;
+      --btn-gradient-color-end: #626262;
+      color: #fcd384;
+    }
+  }
 }
