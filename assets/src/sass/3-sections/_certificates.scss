@@ -1,0 +1,82 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.certificates {
+  background-image: url('../img/tariffs/bg-tariffs.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    @extend %container;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__desc {
+    margin-top: $block-padding-mobile;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+
+    @include media('>=sm') {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: $block-padding-pc;
+      font-size: 3.3rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.swiper_certificates {
+  --swiper-navigation-color: $body-color;
+  padding-top: $block-padding-mobile;
+
+  @include media('>=sm') {
+    padding-top: 3rem;
+  }
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    padding-top: 5rem;
+  }
+
+  .swiper-slide {
+    border-radius: $default-radius;
+  }
+}
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: transparent;
+
+  &__title {
+    padding: $block-padding-mobile 4rem 3rem;
+    font-family: $body-font;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #704f10;
+
+    @include media('>=sm') {
+      padding-right: $block-padding-mobile;
+      padding-left: $block-padding-mobile;
+      padding-bottom: $block-padding-mobile;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: $block-padding-pc;
+      font-size: 2.1rem;
+      line-height: 2.6rem;
+    }
+  }
+}

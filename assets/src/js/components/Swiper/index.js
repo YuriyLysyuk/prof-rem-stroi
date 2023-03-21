@@ -100,3 +100,49 @@ const videoReviewsSwiper = new Swiper('.js-video-reviews', {
     },
   },
 });
+
+const certificatesSwiper = new Swiper('.js-certificates', {
+  grabCursor: true,
+  slidesPerView: 1,
+  spaceBetween: 16,
+  navigation: {
+    enabled: true,
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    576: {
+      grabCursor: true,
+      slidesPerView: 2,
+      spaceBetween: 16,
+      navigation: {
+        enabled: true,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    },
+    992: {
+      grabCursor: true,
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        enabled: true,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    },
+  },
+});
