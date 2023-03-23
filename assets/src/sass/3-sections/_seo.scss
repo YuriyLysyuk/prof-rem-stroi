@@ -1,0 +1,79 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.seo {
+  &__inner {
+    @extend %container;
+  }
+
+  &__content {
+    margin-top: $block-padding-mobile;
+
+    @include media('>=sm') {
+      margin-top: 3rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: 5rem;
+    }
+
+    & > * {
+      @extend %text-margin;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 2rem;
+    padding: $block-padding-mobile;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.085em;
+    color: #644201;
+    background-color: #fff;
+    border-radius: $default-radius;
+    box-shadow: $default-shadow;
+    list-style-type: none;
+
+    @include media('>=sm') {
+      float: left;
+      max-width: 22rem;
+      margin-right: 2rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      max-width: 40rem;
+      margin-right: 2.7rem;
+      margin-bottom: 2.7rem;
+      padding: $block-padding-pc;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    & > * {
+      @extend %text-margin;
+    }
+
+    & > li {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      align-items: center;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        grid-template-columns: 5rem 1fr;
+      }
+
+      & > svg {
+        justify-self: center;
+        margin-right: 1rem;
+        font-size: 2rem;
+        color: #b57700;
+
+        @include media('>=#{$mobile-menu-breakpoint}') {
+          font-size: 2.7rem;
+        }
+      }
+    }
+  }
+}
