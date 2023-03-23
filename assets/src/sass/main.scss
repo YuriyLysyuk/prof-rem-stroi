@@ -4,6 +4,7 @@
 // Components
 @use './2-components/modal';
 @use './2-components/table';
+@use './2-components/blockquote';
 
 // Sections
 @use './3-sections/header';
@@ -17,4 +18,5 @@
 @use './3-sections/smeta';
 @use './3-sections/price';
 @use './3-sections/certificates';
+@use './3-sections/founder';
 @use './3-sections/footer';
