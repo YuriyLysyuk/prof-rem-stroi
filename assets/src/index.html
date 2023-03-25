@@ -28,6 +28,14 @@
   </head>
   <body>
     <header class="js-header header">
+      <!-- Чекбокс открытия главного меню -->
+      <input
+        class="menu-toggle__input"
+        type="checkbox"
+        id="menu-toggle"
+        name="menu-toggle"
+      />
+
       <div class="header__inner">
         <a href="/" class="logo">
           <img
@@ -41,6 +49,21 @@
           <div class="header__title">Строительно-отделочная компания</div>
 
           <ul class="header__nav">
+            <li class="header__nav-item menu-toggle">
+              <label
+                class="header__nav-link menu-toggle__label"
+                for="menu-toggle"
+              >
+                <span class="bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+
+                <span>Меню</span>
+              </label>
+            </li>
+
             <li class="header__nav-item">
               <a href="#examples" class="header__nav-link">Примеры работ</a>
             </li>
@@ -69,6 +92,94 @@
           <p class="header__promise">Перезвоним через 15 минут!</p>
         </div>
       </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <input type="radio" name="level-1" id="level-1-remont-kvartir" />
+
+            <label for="level-1-remont-kvartir">
+              <a href="#">Ремонт квартир</a>
+
+              <i class="fa-solid fa-angle-right"></i>
+            </label>
+
+            <ul>
+              <li>
+                <input
+                  type="radio"
+                  name="level-2-remont-kvartir"
+                  id="level-2-remont-studii"
+                />
+
+                <label for="level-2-remont-studii">
+                  <a href="#">Ремонт студии</a>
+
+                  <i class="fa-solid fa-angle-right"></i>
+                </label>
+
+                <ul>
+                  <li><a href="#">Черновой ремонт квартиры-студии</a></li>
+
+                  <li><a href="#">Косметический ремонт квартиры-студии</a></li>
+
+                  <li><a href="#">Капитальный ремонт квартиры-студии</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <input
+                  type="radio"
+                  name="level-2-remont-kvartir"
+                  id="level-2-remont-1k-kvartiry"
+                />
+
+                <label for="level-2-remont-1k-kvartiry">
+                  <a href="#">Ремонт 1-комн. квартиры</a>
+
+                  <i class="fa-solid fa-angle-right"></i>
+                </label>
+
+                <ul>
+                  <li><a href="#">Черновой ремонт 1-комн. квартиры</a></li>
+
+                  <li><a href="#">Косметический ремонт 1-комн. квартиры</a></li>
+
+                  <li><a href="#">Капитальный ремонт 1-комн. квартиры</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">Ремонт 2-комн. квартиры</a></li>
+              <li><a href="#">Ремонт 3-комн. квартиры</a></li>
+              <li><a href="#">Ремонт 4-комн. квартиры</a></li>
+              <li><a href="#">Ремонт 5-комн. квартиры</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <input type="radio" name="level-1" id="level-1-remont-komnat" />
+
+            <label for="level-1-remont-komnat">
+              <a href="#">Ремонт комнат</a>
+
+              <i class="fa-solid fa-angle-right"></i>
+            </label>
+
+            <ul>
+              <li><a href="#">Ремонт ванной комнаты</a></li>
+              <li><a href="#">Ремонт туалета</a></li>
+              <li><a href="#">Ремонт кухни</a></li>
+              <li><a href="#">Ремонт спальни</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Ремонт офисов</a></li>
+          <li><a href="#">Ремонт домов</a></li>
+          <li><a href="#">Дизайн</a></li>
+          <li><a href="#">Прочие услуги</a></li>
+          <li><a href="#">Вакансии</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Нужен для отслеживания положения плавающей шапки -->
@@ -690,13 +801,13 @@
                   <p><strong>Заказчик:</strong> Степан Владимирович</p>
                 </div>
 
-                <iframe
+                <!-- <iframe
                   class="video"
                   src="https://www.youtube.com/embed/ghmX4j8U8Jw"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                   allowfullscreen
-                ></iframe>
+                ></iframe> -->
               </div>
               <div class="swiper-slide video-review">
                 <h3 class="video-review__title">
@@ -712,13 +823,13 @@
                   <p><strong>Заказчик:</strong> Мария</p>
                 </div>
 
-                <iframe
+                <!-- <iframe
                   class="video"
                   src="https://www.youtube.com/embed/_hiP0rHSLKM"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                   allowfullscreen
-                ></iframe>
+                ></iframe> -->
               </div>
               <div class="swiper-slide video-review">
                 <h3 class="video-review__title">
@@ -734,13 +845,13 @@
                   <p><strong>Заказчик:</strong> Симон</p>
                 </div>
 
-                <iframe
+                <!-- <iframe
                   class="video"
                   src="https://www.youtube.com/embed/uIcEts4zp5o"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                   allowfullscreen
-                ></iframe>
+                ></iframe> -->
               </div>
               <div class="swiper-slide video-review">
                 <h3 class="video-review__title">
@@ -756,13 +867,13 @@
                   <p><strong>Заказчик:</strong> Сергей</p>
                 </div>
 
-                <iframe
+                <!-- <iframe
                   class="video"
                   src="https://www.youtube.com/embed/oJrrB_s1aPs"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                   allowfullscreen
-                ></iframe>
+                ></iframe> -->
               </div>
             </div>
 

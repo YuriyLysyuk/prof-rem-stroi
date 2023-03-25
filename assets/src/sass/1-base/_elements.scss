@@ -33,3 +33,7 @@ img {
 svg {
   @extend %transition;
 }
+
+label {
+  cursor: pointer;
+}

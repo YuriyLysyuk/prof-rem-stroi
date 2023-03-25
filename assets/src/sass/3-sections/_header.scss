@@ -13,7 +13,7 @@
     @extend %container;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-top: 0;
     padding-bottom: 0;
     height: 5rem;
@@ -25,6 +25,7 @@
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {
+      justify-content: space-between;
       height: 12rem;
     }
   }
@@ -32,8 +33,12 @@
   &__average {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      justify-content: space-between;
+    }
   }
 
   &__title {
@@ -49,11 +54,10 @@
   }
 
   &__nav {
-    display: none;
+    display: flex;
     list-style-type: none;
 
     @include media('>=#{$mobile-menu-breakpoint}') {
-      display: flex;
       justify-content: center;
       align-items: center;
       flex-grow: 1;
@@ -61,22 +65,48 @@
   }
 
   &__nav-item {
+    display: none;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      display: flex;
+      align-items: center;
+    }
+
+    &.menu-toggle {
+      display: flex;
+    }
   }
 
   &__nav-link {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
     text-transform: uppercase;
     text-align: center;
+    user-select: none;
+
+    @include media('>=sm') {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-left: auto;
     text-align: right;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-left: 0;
+    }
   }
 
   &__phone {
@@ -92,11 +122,12 @@
 
   &__time {
     margin-top: 0.4rem;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.3rem;
 
     @include media('>=sm') {
       margin-top: 0;
+      font-size: 1.1rem;
     }
 
     @include media('>=#{$mobile-menu-breakpoint}') {

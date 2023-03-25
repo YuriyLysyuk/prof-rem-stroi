@@ -13,6 +13,7 @@ import { faTiktok } from '@fortawesome/free-brands-svg-icons/faTiktok';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
 const icons = [
   faWhatsapp,
@@ -25,6 +26,7 @@ const icons = [
   faEnvelope,
   faPhone,
   faLocationDot,
+  faAngleRight,
 ];
 
 library.add(icons);

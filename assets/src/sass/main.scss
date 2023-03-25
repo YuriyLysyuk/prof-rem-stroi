@@ -2,6 +2,7 @@
 @use './1-base/base';
 
 // Components
+@use './2-components/main-menu';
 @use './2-components/modal';
 @use './2-components/table';
 @use './2-components/blockquote';
