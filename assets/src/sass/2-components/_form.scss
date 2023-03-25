@@ -1,0 +1,90 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    gap: 2rem;
+  }
+
+  &_horisontal {
+    flex-direction: column;
+
+    @include media('>=sm') {
+      flex-direction: row;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1.3rem;
+    border: 0.1rem solid #bebebe;
+    border-radius: $default-radius;
+    overflow: hidden;
+    @extend %transition;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: 1.5rem 2rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &:focus-within {
+      background-color: transparent;
+      border: 0.1rem solid rgba(0, 0, 0, 0.76);
+    }
+
+    & > svg {
+      width: 1.8rem;
+      font-size: 1.8rem;
+      color: #bebebe;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        width: 2rem;
+        font-size: 2rem;
+      }
+
+      & + input {
+        margin-left: 1.5rem;
+      }
+    }
+
+    & > input[type='text'],
+    & > input[type='tel'] {
+      flex-grow: 1;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      background-color: transparent;
+      border: none;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__control,
+  .btn {
+    width: 100%;
+    max-width: 25.6rem;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      max-width: 30%;
+    }
+  }
+}

@@ -6,6 +6,7 @@
 @use './2-components/modal';
 @use './2-components/table';
 @use './2-components/blockquote';
+@use './2-components/form';
 
 // Sections
 @use './3-sections/header';
@@ -21,4 +22,5 @@
 @use './3-sections/certificates';
 @use './3-sections/founder';
 @use './3-sections/seo';
+@use './3-sections/sales';
 @use './3-sections/footer';

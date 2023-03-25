@@ -1,0 +1,41 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.sales {
+  @extend %container-wide;
+
+  &__inner {
+    @extend %container;
+    width: 100%;
+    padding: $block-padding-mobile;
+    text-align: center;
+    background-color: #fff;
+    border-radius: $default-radius;
+    box-shadow: $default-shadow;
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      padding: calc($block-padding-pc * 2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    margin-top: $block-padding-mobile;
+
+    @include media('>=sm') {
+      margin-top: 3rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.seo + .sales {
+  padding-top: 0;
+}
