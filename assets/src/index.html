@@ -1660,7 +1660,7 @@
       <section class="sales">
         <div class="sales__inner">
           <h2>
-            Хотите экономить 30% на ремонте?
+            Хотите экономить 10% на ремонте?
             <span>мы знаем как!</span>
           </h2>
 
@@ -1669,12 +1669,7 @@
               <label class="form__control">
                 <i class="fa-solid fa-user"></i>
 
-                <input
-                  class=""
-                  type="text"
-                  name="name"
-                  placeholder="Ваше имя"
-                />
+                <input type="text" name="name" placeholder="Ваше имя" />
               </label>
 
               <label class="form__control">
@@ -1688,7 +1683,7 @@
                 />
               </label>
 
-              <button class="btn btn_small">Хочу знать</button>
+              <button class="btn btn_small" type="submit">Хочу знать</button>
             </form>
           </div>
         </div>
@@ -1825,9 +1820,42 @@
       </div>
 
       <div class="modal__body">
-        <p>Здесь будет форма отправки сметы</p>
+        <form class="form form_vertical">
+          <label class="form__control">
+            <i class="fa-solid fa-user"></i>
 
-        <button class="btn btn_small" type="button">Отправить</button>
+            <input type="text" name="name" placeholder="Ваше имя" />
+          </label>
+
+          <label class="form__control">
+            <i class="fa-solid fa-phone"></i>
+
+            <input
+              type="tel"
+              name="tel"
+              placeholder="Ваш номер телефона"
+              required
+            />
+          </label>
+
+          <label class="form__control form__control_file">
+            <i class="fa-solid fa-file"></i>
+
+            <input type="file" name="file" placeholder="Смета" />
+          </label>
+
+          <label class="form__control">
+            <i class="fa-solid fa-message"></i>
+
+            <textarea
+              name="comment"
+              rows="5"
+              placeholder="Комментарий"
+            ></textarea>
+          </label>
+
+          <button class="btn btn_small" type="submit">Отправить</button>
+        </form>
       </div>
     </section>
 

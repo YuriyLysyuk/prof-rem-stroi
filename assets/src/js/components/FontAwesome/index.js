@@ -15,6 +15,8 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faFile } from '@fortawesome/free-solid-svg-icons/faFile';
+import { faMessage } from '@fortawesome/free-solid-svg-icons/faMessage';
 
 const icons = [
   faWhatsapp,
@@ -29,6 +31,8 @@ const icons = [
   faLocationDot,
   faAngleRight,
   faUser,
+  faFile,
+  faMessage,
 ];
 
 library.add(icons);
