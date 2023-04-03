@@ -14,19 +14,13 @@ module.exports = merge(common, {
   stats: 'errors-only',
   bail: true,
 
-  output: {
-    filename: 'js/[name].[chunkhash:8].js',
-    chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
-  },
-
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
 
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[chunkhash:8].css',
-      chunkFilename: 'css/[name].[chunkhash:8].chunk.css',
+      filename: 'css/[name].css',
     }),
   ],
 
@@ -35,7 +29,6 @@ module.exports = merge(common, {
       {
         test: /\.js$/,
         include: [JS_DIR],
-        exclude: /node_modules/,
         use: 'babel-loader',
       },
 

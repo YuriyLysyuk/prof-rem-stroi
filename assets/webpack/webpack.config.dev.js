@@ -11,10 +11,6 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-cheap-source-map',
 
-  output: {
-    chunkFilename: 'js/[name].chunk.js',
-  },
-
   devServer: {
     client: {
       logging: 'error',
