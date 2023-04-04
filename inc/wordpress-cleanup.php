@@ -42,3 +42,24 @@ function prs_disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 
 	return $urls;
 }
+
+/**
+ * Очистка WP head
+ */
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'index_rel_link' );
+remove_action( 'wp_head', 'feed_links', 2 );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+
+/**
+ * Отключаем Gutenberg стили
+ */
+function smartwp_remove_wp_block_library_css() {
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'classic-theme-styles' );
+	wp_dequeue_style( 'global-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
