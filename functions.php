@@ -35,3 +35,8 @@ add_action( 'wp_enqueue_scripts', 'prs_scripts' );
  * Удаление лишнего функционала
  */
 require get_template_directory() . '/inc/wordpress-cleanup.php';
+
+/**
+ * Настройки плагина ACF
+ */
+require get_template_directory() . '/inc/acf.php';
