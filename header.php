@@ -1,5 +1,6 @@
 <?php
 $siteName = get_bloginfo( 'name' );
+$siteDescription = get_bloginfo( 'description' );
 $logoUrl = get_field( 'logo', 'option' );
 $favicon180Url = get_field( 'favicon_180', 'option' );
 $favicon32Url = get_field( 'favicon_32', 'option' );
@@ -34,7 +35,9 @@ $favicon16Url = get_field( 'favicon_16', 'option' );
 			</a>
 
 			<div class="header__average">
-				<div class="header__title">Строительно-отделочная компания</div>
+				<div class="header__title">
+					<?= $siteDescription ?>
+				</div>
 
 				<ul class="header__nav">
 					<li class="header__nav-item menu-toggle">
