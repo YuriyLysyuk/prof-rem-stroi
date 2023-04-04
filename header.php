@@ -1,3 +1,8 @@
+<?php
+$siteName = get_bloginfo( 'name' );
+$logoUrl = get_field( 'logo', 'option' );
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -22,7 +27,7 @@
 
 		<div class="header__inner">
 			<a href="/" class="logo">
-				<img class="logo__img" src="./img/logo.png" alt="Логотип Проф Ремонт" />
+				<img class="logo__img" src="<?= $logoUrl ?>" alt="Логотип <?= $siteName ?>" />
 			</a>
 
 			<div class="header__average">
