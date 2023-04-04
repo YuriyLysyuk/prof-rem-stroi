@@ -43,6 +43,81 @@
             "max_size": "",
             "mime_types": "png",
             "preview_size": "full"
+        },
+        {
+            "key": "field_642c1f5332f10",
+            "label": "Фавиконка 180",
+            "name": "favicon_180",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Размер: 180x180 px\r\nФормат: прозрачный png",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": 180,
+            "min_height": 180,
+            "min_size": "",
+            "max_width": 180,
+            "max_height": 180,
+            "max_size": "",
+            "mime_types": "png",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_642c1fad41f53",
+            "label": "Фавиконка 32",
+            "name": "favicon_32",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Размер: 32x32 px\r\nФормат: прозрачный png",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": 32,
+            "min_height": 32,
+            "min_size": "",
+            "max_width": 32,
+            "max_height": 32,
+            "max_size": "",
+            "mime_types": "png",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_642c1fca22855",
+            "label": "Фавиконка 16",
+            "name": "favicon_16",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Размер: 16x16 px\r\nФормат: прозрачный png",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": 16,
+            "min_height": 16,
+            "min_size": "",
+            "max_width": 16,
+            "max_height": 16,
+            "max_size": "",
+            "mime_types": "png",
+            "preview_size": "full"
         }
     ],
     "location": [
@@ -63,5 +138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680612747
+    "modified": 1680613349
 }

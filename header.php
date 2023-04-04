@@ -1,6 +1,9 @@
 <?php
 $siteName = get_bloginfo( 'name' );
 $logoUrl = get_field( 'logo', 'option' );
+$favicon180Url = get_field( 'favicon_180', 'option' );
+$favicon32Url = get_field( 'favicon_32', 'option' );
+$favicon16Url = get_field( 'favicon_16', 'option' );
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +14,11 @@ $logoUrl = get_field( 'logo', 'option' );
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?= $favicon180Url ?>" />
 
-	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= $favicon32Url ?>" />
 
-	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= $favicon16Url ?>" />
 
 	<?php wp_head(); ?>
 </head>
