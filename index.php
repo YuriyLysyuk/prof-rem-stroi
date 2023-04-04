@@ -1,5 +1,7 @@
 <?php
 get_header();
+
+$phone = get_field( 'phone', 'option' );
 ?>
 
 <main>
@@ -1198,7 +1200,7 @@ get_header();
 					<li>
 						<i class="fa-solid fa-phone"></i>
 
-						<a href="tel:+79254211745">+ 7 (925) 421-17-45</a>
+						<a href="<?= esc_html( $phone['link'] ) ?>"><?= esc_html( $phone['text'] ) ?></a>
 					</li>
 
 					<li>
