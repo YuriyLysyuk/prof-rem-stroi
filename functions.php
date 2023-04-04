@@ -1,6 +1,6 @@
 <?php
 /**
- * prof-rem-stroi functions and definitions
+ * Настройки темы
  *
  * @package prof-rem-stroi
  */
@@ -30,3 +30,8 @@ function prs_scripts() {
 	wp_enqueue_script( 'prs-script', get_template_directory_uri() . '/assets/build/js/main.js', array( 'prs-vendors-script' ), PRS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'prs_scripts' );
+
+/**
+ * Удаление лишнего функционала
+ */
+require get_template_directory() . '/inc/wordpress-cleanup.php';
