@@ -5,25 +5,6 @@ $phone = get_field( 'phone', 'option' );
 ?>
 
 <main>
-	<section class="numbers">
-		<div class="numbers__list">
-			<div class="numbers__item">
-				<div class="title">10+</div>
-				<div class="desc"><strong>лет опыта</strong> в ремонте</div>
-			</div>
-
-			<div class="numbers__item">
-				<div class="title">25+</div>
-				<div class="desc">собственных <strong>бригад</strong></div>
-			</div>
-
-			<div class="numbers__item">
-				<div class="title">350+</div>
-				<div class="desc">реализованных <strong>объектов</strong></div>
-			</div>
-		</div>
-	</section>
-
 	<section class="categories">
 		<div class="categories__grid">
 			<a class="category" href="#">
