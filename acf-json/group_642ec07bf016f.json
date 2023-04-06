@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_642ec15d52263",
-            "label": "Секция Hero",
+            "label": "Первый экран",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -99,7 +99,7 @@
         },
         {
             "key": "field_642ec4f99de58",
-            "label": "Секция Numbers",
+            "label": "Цифры",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -271,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680786991
+    "modified": 1680796337
 }

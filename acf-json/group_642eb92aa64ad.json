@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_642ec1177e9ae",
-            "label": "Секция Hero",
+            "label": "Первый экран",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -76,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680785732
+    "modified": 1680796361
 }
