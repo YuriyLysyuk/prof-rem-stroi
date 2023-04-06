@@ -40,3 +40,8 @@ require get_template_directory() . '/inc/wordpress-cleanup.php';
  * Настройки плагина ACF
  */
 require get_template_directory() . '/inc/acf.php';
+
+/**
+ * Отключение редактора
+ */
+require get_template_directory() . '/inc/disable-editor.php';
