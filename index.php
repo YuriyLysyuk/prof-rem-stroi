@@ -712,44 +712,6 @@ $phone = get_field( 'phone', 'option' );
 		</div>
 	</section>
 
-	<section class="reasons">
-		<div class="reasons__inner">
-			<h2>
-				<span>5 Реальных причин, почему</span> стоит обратиться именно к нам
-			</h2>
-
-			<ol class="reasons__list">
-				<li class="reason">
-					<strong>Более 350</strong> реализованных
-					<strong>проектов</strong> и 11 лет опыта
-				</li>
-
-				<li class="reason">
-					<strong>Знаем</strong> и соблюдаем
-					<strong>СНИПы и ГОСТы</strong> на отделку
-				</li>
-
-				<li class="reason">
-					<strong>Соблюдаем</strong> заявленные <strong>сроки</strong> и
-					смету
-				</li>
-
-				<li class="reason">
-					<strong>Работаем</strong> строго <strong>по договору</strong>
-				</li>
-
-				<li class="reason">
-					Закупаем материалы оптом, ваша <strong>экономия - 15-20%</strong>
-				</li>
-			</ol>
-
-			<div class="reasons__resume">
-				А также, можем показать <strong>готовые объекты</strong>, <br />
-				в отличие от конкурентов
-			</div>
-		</div>
-	</section>
-
 	<section class="hero hero_delivery text_inverted">
 		<div class="hero__inner">
 			<h2>

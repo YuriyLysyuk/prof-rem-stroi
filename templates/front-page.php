@@ -15,6 +15,8 @@ get_header();
 	get_template_part( 'templates/sections/hero' );
 
 	get_template_part( 'templates/sections/numbers' );
+
+	get_template_part( 'templates/sections/reasons' );
 	?>
 
 </main>
