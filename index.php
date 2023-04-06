@@ -5,20 +5,6 @@ $phone = get_field( 'phone', 'option' );
 ?>
 
 <main>
-	<section class="hero hero_main text_inverted">
-		<div class="hero__inner">
-			<h1><span>Сделаем идеальный ремонт</span> вашего жилья</h1>
-
-			<p class="hero__desc">
-				Предложим <strong>лучшую цену</strong><br />в городе* до 31.04.2023
-			</p>
-		</div>
-
-		<div class="hero__btn">
-			<a class="btn" href="#">Узнать стоимость ремонта</a>
-		</div>
-	</section>
-
 	<section class="numbers">
 		<div class="numbers__list">
 			<div class="numbers__item">
