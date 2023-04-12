@@ -712,28 +712,6 @@ $phone = get_field( 'phone', 'option' );
 		</div>
 	</section>
 
-	<section class="smeta">
-		<div class="smeta__inner">
-			<h2>
-				У вас есть готовая
-				<span>смета на ремонт?</span>
-			</h2>
-
-			<button class="btn btn_small" type="button" data-modal-open="smeta">
-				Присылайте её нам
-			</button>
-
-			<div class="smeta__text">
-				<p>
-					Предложим <strong>лучшую цену</strong> в городе* до 31.04.2023 и
-					<strong>три варианта</strong> стоимости на выбор:
-				</p>
-
-				<p class="smeta__tariffs">эконом, стандарт, премиум</p>
-			</div>
-		</div>
-	</section>
-
 	<section class="price">
 		<div class="price__inner">
 			<h2>Цены по видам работ</h2>

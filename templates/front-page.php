@@ -20,6 +20,8 @@ get_header();
 
 	get_template_part( 'templates/sections/hero', 'delivery' );
 
+	get_template_part( 'templates/sections/smeta' );
+
 	?>
 
 </main>
