@@ -712,20 +712,6 @@ $phone = get_field( 'phone', 'option' );
 		</div>
 	</section>
 
-	<section class="hero hero_delivery text_inverted">
-		<div class="hero__inner">
-			<h2>
-				<span>Поможем с выбором и доставкой материалов</span>
-			</h2>
-
-			<p class="hero__desc">
-				Работаем с <strong>Вашими материалами</strong> или поможем купить по
-				<strong>оптовым ценам</strong>. Спланируем Ваш ремонт так, чтобы он
-				оставил только <strong>положительные эмоции</strong>
-			</p>
-		</div>
-	</section>
-
 	<section class="smeta">
 		<div class="smeta__inner">
 			<h2>
