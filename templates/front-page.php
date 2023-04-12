@@ -22,6 +22,8 @@ get_header();
 
 	get_template_part( 'templates/sections/smeta' );
 
+	get_template_part( 'templates/sections/certificates' );
+
 	?>
 
 </main>
