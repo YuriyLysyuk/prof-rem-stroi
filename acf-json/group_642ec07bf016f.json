@@ -707,6 +707,151 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_6436b9d0048f9",
+            "label": "Слово основателя",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6436b9d7048fa",
+            "label": "Секция Founder",
+            "name": "founder",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6436b9d7048fb",
+                    "label": "Имя",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6436ba7604901",
+                    "label": "Должность",
+                    "name": "position",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6436babc04902",
+                    "label": "Цитата",
+                    "name": "quote",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6436bb58a00e6",
+                    "label": "Фото основателя",
+                    "name": "photo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Размер: 815x815px \r\nФормат: прозрачный png",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": 815,
+                    "min_height": 815,
+                    "min_size": "",
+                    "max_width": 815,
+                    "max_height": 815,
+                    "max_size": "",
+                    "mime_types": "png",
+                    "preview_size": "full"
+                },
+                {
+                    "key": "field_6436bbdba00e7",
+                    "label": "Фото подписи",
+                    "name": "sign",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Размер: 201x108px \r\nФормат: прозрачный png",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": 201,
+                    "min_height": 108,
+                    "min_size": "",
+                    "max_width": 201,
+                    "max_height": 108,
+                    "max_size": "",
+                    "mime_types": "png",
+                    "preview_size": "full"
+                }
+            ]
         }
     ],
     "location": [
@@ -727,5 +872,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681307250
+    "modified": 1681308700
 }

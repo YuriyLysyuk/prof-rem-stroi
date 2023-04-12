@@ -24,6 +24,8 @@ get_header();
 
 	get_template_part( 'templates/sections/certificates' );
 
+	get_template_part( 'templates/sections/founder' );
+
 	?>
 
 </main>

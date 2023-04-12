@@ -1000,29 +1000,6 @@ $phone = get_field( 'phone', 'option' );
 		</div>
 	</section>
 
-	<section class="founder">
-		<div class="founder__inner">
-			<div class="founder__words">
-				<blockquote cite="https://www.huxley.net/bnw/four.html">
-					<p>
-						Наше кредо - качество по разумной цене. Мы научились убирать из
-						сметы «лишнее», выполняя при этом все пожелания клиента.
-					</p>
-				</blockquote>
-
-				<img class="founder__sign" src="./img/founder/sign.png" alt="Подпись основателя" loading="lazy" />
-			</div>
-
-			<div class="founder__photo">
-				<img src="./img/founder/founder.png" alt="Основатель компании" loading="lazy" />
-
-				<p class="founder__desc">основатель компании «Prof Remont»</p>
-
-				<p class="founder__name">Николай Аристов</p>
-			</div>
-		</div>
-	</section>
-
 	<section class="seo" id="contacts">
 		<div class="seo__inner">
 			<h2>Ремонт квартир под ключ в Москве</h2>
