@@ -16,6 +16,8 @@ get_header();
 
 	get_template_part( 'templates/sections/numbers' );
 
+	get_template_part( 'templates/sections/video-reviews' );
+
 	get_template_part( 'templates/sections/reasons' );
 
 	get_template_part( 'templates/sections/hero', 'delivery' );
