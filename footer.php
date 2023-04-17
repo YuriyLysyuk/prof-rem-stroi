@@ -1,34 +1,35 @@
+<?php
+$siteName = esc_attr( get_bloginfo( 'name' ) );
+
+$socialsTitle = get_field( 'socials_title', 'option' );
+$socialsList = get_field( 'socials_list', 'option' );
+?>
+
 <footer class="footer">
 	<div class="footer__inner">
-		<div class="social">
-			<span class="social__title">Проф-Рем-Строй в социальных сетях:</span>
+		<? if ( $socialsList ) : ?>
+			<div class="social">
+				<span class="social__title">
+					<?= $socialsTitle ?>
+				</span>
 
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-vk"></i>
-			</a>
+				<? foreach ( $socialsList as $social ) : ?>
 
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-instagram"></i>
-			</a>
+					<?php
+					$socialUrl = esc_url( $social['url'] );
+					$socialIcon = $social['icon'];
+					$socialIconClass = esc_attr( $socialIcon['value'] );
+					$socialTitle = esc_attr( $socialIcon['label'] );
+					?>
 
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-odnoklassniki"></i>
-			</a>
+					<a class="social__link" href="<?= $socialUrl ?>" target="_blank" title="<?= $siteName ?> в <?= $socialTitle ?>">
+						<i class="fa-brands <?= $socialIconClass ?>"></i>
+					</a>
+				<? endforeach; ?>
+			</div>
 
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-youtube"></i>
-			</a>
-
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-square-facebook"></i>
-			</a>
-
-			<a class="social__link" href="#" target="_blank">
-				<i class="fa-brands fa-tiktok"></i>
-			</a>
-		</div>
-
-		<hr />
+			<hr />
+		<? endif; ?>
 
 		<div class="footer__menus">
 			<div class="footer__menu">
