@@ -27,6 +27,8 @@ get_header();
 	get_template_part( 'templates/sections/founder' );
 
 	get_template_part( 'templates/sections/seo' );
+
+	get_template_part( 'templates/sections/sales' );
 	?>
 
 </main>
