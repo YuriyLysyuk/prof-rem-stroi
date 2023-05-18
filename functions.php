@@ -14,6 +14,8 @@ if ( ! defined( 'PRS_VERSION' ) ) {
  */
 function prs_setup() {
 	add_theme_support( 'title-tag' );
+
+	add_theme_support( 'menus' );
 }
 add_action( 'after_setup_theme', 'prs_setup' );
 
@@ -45,3 +47,8 @@ require get_template_directory() . '/inc/acf.php';
  * Отключение редактора
  */
 require get_template_directory() . '/inc/disable-editor.php';
+
+/**
+ * Меню
+ */
+require get_template_directory() . '/inc/menu.php';

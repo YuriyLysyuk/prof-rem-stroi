@@ -44,35 +44,17 @@ $workPromise = get_field( 'work_promise', 'option' );
 					<?= esc_html( $siteDescription ) ?>
 				</div>
 
-				<ul class="header__nav">
-					<li class="header__nav-item menu-toggle">
-						<label class="header__nav-link menu-toggle__label" for="menu-toggle">
-							<span class="bars">
-								<span></span>
-								<span></span>
-								<span></span>
-							</span>
-
-							<span>Меню</span>
-						</label>
-					</li>
-
-					<li class="header__nav-item">
-						<a href="#examples" class="header__nav-link">Примеры работ</a>
-					</li>
-
-					<li class="header__nav-item">
-						<a href="#video-reviews" class="header__nav-link">Отзывы</a>
-					</li>
-
-					<li class="header__nav-item">
-						<a href="#tariffs" class="header__nav-link">Тарифы</a>
-					</li>
-
-					<li class="header__nav-item">
-						<a href="#contacts" class="header__nav-link">Контакты</a>
-					</li>
-				</ul>
+				<?php
+				wp_nav_menu( [ 
+					'theme_location' => 'header_page_menu',
+					'depth' => 1,
+					'container' => false,
+					'fallback_cb' => false,
+					'echo' => true,
+					'walker' => new Header_Page_Walker_Nav_Menu(),
+					'items_wrap' => '<ul class="header__nav">%3$s</ul>',
+				] );
+				?>
 			</div>
 
 			<div class="header__contacts">
