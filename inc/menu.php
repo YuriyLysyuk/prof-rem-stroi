@@ -18,6 +18,11 @@ register_nav_menus(
 require get_template_directory() . '/inc/nav_walkers/Header_Page_Walker_Nav_Menu.php';
 
 /**
+ * Основное меню
+ */
+require get_template_directory() . '/inc/nav_walkers/Main_Walker_Nav_Menu.php';
+
+/**
  * Добавляем переключатель главного меню
  */
 add_filter( 'wp_nav_menu_items', 'add_menu_toggle_link', 10, 2 );
