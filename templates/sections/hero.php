@@ -6,13 +6,14 @@
  */
 
 if ( is_tax() ) {
-	$term = get_queried_object();
-	$termID = $term->ID;
+	$currentTerm = get_queried_object();
+	$currentTermID = $currentTerm->term_id;
+	$taxonomy = $currentTerm->taxonomy;
 
-	$title = get_field( 'hero_title', $termID );
+	$title = get_field( 'hero_title', $taxonomy . '_ ' . $currentTermID );
 
 	if ( ! $title ) {
-		$title = $term->name;
+		$title = $currentTerm->name;
 	}
 
 } else {
