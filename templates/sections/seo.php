@@ -6,10 +6,11 @@
  */
 
 if ( is_tax() ) {
-	$term = get_queried_object();
-	$termID = $term->ID;
+	$currentTerm = get_queried_object();
+	$currentTermID = $currentTerm->term_id;
+	$taxonomy = $currentTerm->taxonomy;
 
-	$seo = get_field( 'seo', $termID );
+	$seo = get_field( 'seo', $taxonomy . '_ ' . $currentTermID );
 
 } else {
 	$post = get_post();
@@ -26,7 +27,7 @@ $whatsapp = get_field( 'whatsapp', 'option' );
 
 ?>
 
-<? if ( $seo['text'] ) : ?>
+<? if ( $seo && $seo['text'] ) : ?>
 
 	<section class="seo" id="contacts">
 		<div class="seo__inner">
