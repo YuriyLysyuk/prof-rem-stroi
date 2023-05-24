@@ -5,10 +5,22 @@
  * @package prof-rem-stroi
  */
 
-$post = get_post();
-$postID = $post->ID;
+if ( is_tax() ) {
+	$term = get_queried_object();
+	$termID = $term->ID;
 
-$title = get_field( 'hero_title', $postID );
+	$title = get_field( 'hero_title', $termID );
+
+	if ( ! $title ) {
+		$title = $term->name;
+	}
+
+} else {
+	$post = get_post();
+	$postID = $post->ID;
+	$title = get_field( 'hero_title', $postID );
+}
+
 $utp = get_field( 'hero_utp', 'option' );
 $buttonText = get_field( 'hero_button-text', 'option' );
 $buttonUrl = get_field( 'hero_button-url', 'option' );

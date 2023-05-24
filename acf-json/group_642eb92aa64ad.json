@@ -97,7 +97,7 @@
                     "aria-label": "",
                     "type": "text",
                     "instructions": "Что бы выделить часть заголовка, оберните ее в html-тег span.",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -117,7 +117,7 @@
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -140,6 +140,13 @@
                 "operator": "==",
                 "value": "templates\/front-page.php"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "uslugi"
+            }
         ]
     ],
     "menu_order": 0,
@@ -151,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681727776
+    "modified": 1684936469
 }

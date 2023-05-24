@@ -5,10 +5,19 @@
  * @package prof-rem-stroi
  */
 
-$post = get_post();
-$postID = $post->ID;
+if ( is_tax() ) {
+	$term = get_queried_object();
+	$termID = $term->ID;
 
-$seo = get_field( 'seo', $postID );
+	$seo = get_field( 'seo', $termID );
+
+} else {
+	$post = get_post();
+	$postID = $post->ID;
+
+	$seo = get_field( 'seo', $postID );
+}
+
 
 $phone = get_field( 'phone', 'option' );
 $mail = get_field( 'mail', 'option' );
@@ -17,13 +26,15 @@ $whatsapp = get_field( 'whatsapp', 'option' );
 
 ?>
 
-<? if ( $seo ) : ?>
+<? if ( $seo['text'] ) : ?>
 
 	<section class="seo" id="contacts">
 		<div class="seo__inner">
-			<h2>
-				<?= $seo['title'] ?>
-			</h2>
+			<?php if ( $seo['title'] ) : ?>
+				<h2>
+					<?= $seo['title'] ?>
+				</h2>
+			<?php endif; ?>
 
 			<div class="seo__content">
 				<ul class="seo__contacts">

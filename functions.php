@@ -34,6 +34,11 @@ function prs_scripts() {
 add_action( 'wp_enqueue_scripts', 'prs_scripts' );
 
 /**
+ * Кастомные типы записи
+ */
+require get_template_directory() . '/inc/cpt.php';
+
+/**
  * Удаление лишнего функционала
  */
 require get_template_directory() . '/inc/wordpress-cleanup.php';
