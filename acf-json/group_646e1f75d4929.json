@@ -1,9 +1,69 @@
 {
-    "key": "group_642eb92aa64ad",
-    "title": "Индивидуальные настройки секций главной",
+    "key": "group_646e1f75d4929",
+    "title": "Индивидуальные настройки секций услуг",
     "fields": [
         {
-            "key": "field_642ec1177e9ae",
+            "key": "field_646e1faad1f5c",
+            "label": "Общие",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_646e1fcad1f5d",
+            "label": "Общие настройки",
+            "name": "common",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_646e1fcad1f5e",
+                    "label": "Картинка",
+                    "name": "img",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Размер 720х405px, формат jpg",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg, jpeg",
+                    "preview_size": "full"
+                }
+            ]
+        },
+        {
+            "key": "field_646e1f75daac5",
             "label": "Первый экран",
             "name": "",
             "aria-label": "",
@@ -20,7 +80,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_642eb92a2b039",
+            "key": "field_646e1f75daacc",
             "label": "Секция Hero",
             "name": "hero",
             "aria-label": "",
@@ -36,7 +96,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_642ebad02b03b",
+                    "key": "field_646e1f75dbee8",
                     "label": "Заголовок",
                     "name": "title",
                     "aria-label": "",
@@ -58,7 +118,7 @@
             ]
         },
         {
-            "key": "field_643d201e9264a",
+            "key": "field_646e1f75daad0",
             "label": "SEO-текст",
             "name": "",
             "aria-label": "",
@@ -75,7 +135,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_643d1f8921500",
+            "key": "field_646e1f75daad4",
             "label": "Секция Seo",
             "name": "seo",
             "aria-label": "",
@@ -91,7 +151,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_643d204e9264b",
+                    "key": "field_646e1f75de0e5",
                     "label": "Заголовок",
                     "name": "title",
                     "aria-label": "",
@@ -111,7 +171,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_643d1f8921501",
+                    "key": "field_646e1f75de0e9",
                     "label": "Текст",
                     "name": "text",
                     "aria-label": "",
@@ -136,9 +196,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "templates\/front-page.php"
+                "value": "uslugi"
             }
         ]
     ],
@@ -151,5 +211,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684938658
+    "modified": 1684940994
 }
