@@ -5,21 +5,12 @@
  * @package prof-rem-stroi
  */
 
-if ( is_tax() ) {
-	$currentTerm = get_queried_object();
-	$currentTermID = $currentTerm->term_id;
-	$taxonomy = $currentTerm->taxonomy;
+$post = get_post();
+$postID = $post->ID;
+$title = get_field( 'hero_title', $postID );
 
-	$title = get_field( 'hero_title', $taxonomy . '_ ' . $currentTermID );
-
-	if ( ! $title ) {
-		$title = $currentTerm->name;
-	}
-
-} else {
-	$post = get_post();
-	$postID = $post->ID;
-	$title = get_field( 'hero_title', $postID );
+if ( ! $title ) {
+	$title = $post->post_title;
 }
 
 $utp = get_field( 'hero_utp', 'option' );

@@ -6,42 +6,52 @@
  */
 
 $args = [ 
-	'taxonomy' => [ 'uslugi' ],
-	'hide_empty' => false,
+	'post_type' => 'services',
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
+	'orderby' => 'menu_order',
+	'order' => 'ASC',
 ];
 
-if ( is_tax() ) {
-	$currentTerm = get_queried_object();
-	$currentTermID = $currentTerm->term_id;
+if ( is_singular( 'services' ) ) {
+	$currentItem = get_post();
+	$currentItemID = $currentItem->ID;
 
-	$args['parent'] = $currentTermID;
+	$args['post_parent'] = $currentItemID;
 } else {
-	$args['parent'] = 0;
+	$args['post_parent'] = 0;
 }
 
-$terms = get_terms( $args );
+$items = get_posts( $args );
 
 ?>
 
-<?php if ( $terms && ! is_wp_error( $terms ) ) : ?>
+<?php if ( $items && ! is_wp_error( $items ) ) : ?>
 
 	<section class="categories">
 		<div class="categories__grid">
 			<?php
-			foreach ( $terms as $term ) :
-				$termID = (int) $term->term_id;
+			foreach ( $items as $item ) :
+				$itemID = (int) $item->ID;
 
-				$title = $term->name;
-				$taxonomy = $term->taxonomy;
-				$termUrl = get_term_link( $termID, $taxonomy );
-				$termImgUrl = get_field( 'common_img', $taxonomy . '_' . $termID );
+				$title = $item->post_title;
 
-				if ( ! $termImgUrl ) {
-					$termImgUrl = 'https://fakeimg.pl/720x405?font=noto';
+				if ( 'noindex' === YoastSEO()->meta->for_post( $itemID )->robots['index'] ) {
+					$itemUrl = '#';
+				} else {
+					$itemUrl = get_post_permalink( $itemID );
+				}
+
+
+				$itemThumbnailUrl = get_field( 'common_thumbnail', $itemID );
+
+				if ( ! $itemThumbnailUrl ) {
+					$itemThumbnailUrl = 'https://loremflickr.com/720/405/home,room,design?random=' . $itemID;
 				}
 				?>
-				<a class="category" href="<?= esc_url( $termUrl ) ?>">
-					<img class="category__img" src="<?= esc_url( $termImgUrl ) ?>" alt="<?= esc_attr( $title ) ?>" loading="lazy" />
+				<a class="category" href="<?= esc_url( $itemUrl ) ?>">
+					<img class="category__img" src="<?= esc_url( $itemThumbnailUrl ) ?>" alt="<?= esc_attr( $title ) ?>"
+						loading="lazy" />
 
 					<div class="category__shadow"></div>
 
@@ -49,7 +59,7 @@ $terms = get_terms( $args );
 						<?= esc_html( $title ) ?>
 					</div>
 
-					<div class="category__more" href="#">Подробнее</div>
+					<div class="category__more">Подробнее</div>
 				</a>
 
 			<?php endforeach; ?>

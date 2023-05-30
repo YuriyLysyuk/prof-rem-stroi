@@ -5,19 +5,9 @@
  * @package prof-rem-stroi
  */
 
-if ( is_tax() ) {
-	$currentTerm = get_queried_object();
-	$currentTermID = $currentTerm->term_id;
-	$taxonomy = $currentTerm->taxonomy;
-
-	$seo = get_field( 'seo', $taxonomy . '_ ' . $currentTermID );
-
-} else {
-	$post = get_post();
-	$postID = $post->ID;
-
-	$seo = get_field( 'seo', $postID );
-}
+$post = get_post();
+$postID = $post->ID;
+$seo = get_field( 'seo', $postID );
 
 
 $phone = get_field( 'phone', 'option' );

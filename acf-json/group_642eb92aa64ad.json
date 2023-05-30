@@ -1,6 +1,6 @@
 {
     "key": "group_642eb92aa64ad",
-    "title": "Индивидуальные настройки секций главной",
+    "title": "Главная | Индивидуальные настройки секций",
     "fields": [
         {
             "key": "field_642ec1177e9ae",
@@ -151,5 +151,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684938658
+    "modified": 1685455278
 }

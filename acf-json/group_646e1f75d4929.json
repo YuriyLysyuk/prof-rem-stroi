@@ -1,6 +1,6 @@
 {
     "key": "group_646e1f75d4929",
-    "title": "Индивидуальные настройки секций услуг",
+    "title": "Услуги | Индивидуальные настройки секций",
     "fields": [
         {
             "key": "field_646e1faad1f5c",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
@@ -37,8 +37,8 @@
             "sub_fields": [
                 {
                     "key": "field_646e1fcad1f5e",
-                    "label": "Картинка",
-                    "name": "img",
+                    "label": "Миниатюра",
+                    "name": "thumbnail",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "Размер 720х405px, формат jpg",
@@ -76,7 +76,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
@@ -102,7 +102,7 @@
                     "aria-label": "",
                     "type": "text",
                     "instructions": "Что бы выделить часть заголовка, оберните ее в html-тег span.",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -131,7 +131,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
@@ -196,9 +196,9 @@
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "post_type",
                 "operator": "==",
-                "value": "uslugi"
+                "value": "services"
             }
         ]
     ],
@@ -211,5 +211,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684940994
+    "modified": 1685455252
 }

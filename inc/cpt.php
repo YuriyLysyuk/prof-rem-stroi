@@ -6,17 +6,13 @@
  */
 
 /**
- * Регистрация Услуг и примеров работ
+ * Регистрация услуг
  */
-add_action( 'init', 'register_example_post_type' );
+add_action( 'init', 'register_services_post_type' );
 
-// Отфильтруем ЧПУ произвольного типа
-add_filter( 'post_type_link', 'uslugi_permalink', 1, 2 );
-
-function register_example_post_type() {
-	// Категории услуг
-	register_taxonomy( 'uslugi', [ 'example' ], [ 
-		'labels' => [ 
+function register_services_post_type() {
+	register_post_type( 'services', [ 
+		'labels' => array(
 			'name' => 'Услуги',
 			'singular_name' => 'Услуга',
 			'search_items' => 'Поиск услуги',
@@ -28,77 +24,40 @@ function register_example_post_type() {
 			'add_new_item' => 'Добавление новой услуги',
 			'new_item_name' => 'Новая услуга',
 			'menu_name' => 'Услуги',
-		],
-		'description' => '',
-		'public' => true,
-		'show_in_nav_menus' => false,
-		'show_tagcloud' => false,
-		'hierarchical' => true,
-		'rewrite' => array( 'slug' => 'uslugi', 'hierarchical' => true, 'with_front' => false, 'feed' => false ),
-		'show_admin_column' => true,
-		'show_in_quick_edit' => true,
-	] );
-
-	// Примеры работ
-	register_post_type( 'example', [ 
-		'labels' => array(
-			'name' => 'Примеры работ',
-			'singular_name' => 'Пример работы',
-			'add_new' => 'Добавить пример',
-			'add_new_item' => 'Добавление Примера работы',
-			'edit' => 'Редактировать',
-			'edit_item' => 'Редактирование Примера работы',
-			'new_item' => 'Новый Пример работы',
-			'view_item' => 'Смотреть Примеры работ',
-			'search_items' => 'Искать Примеры работ',
-			'menu_name' => 'Примеры работ',
 		),
 		'description' => '',
 		'public' => true,
 		'show_in_rest' => false,
-		'rest_base' => '',
 		'menu_position' => 3,
 		'menu_icon' => 'dashicons-screenoptions',
-		'capability_type' => 'post',
+		'capability_type' => 'page',
 		'map_meta_cap' => true,
-		'hierarchical' => false,
-		'rewrite' => array( 'slug' => 'uslugi/%uslugi%', 'with_front' => false, 'pages' => false, 'feeds' => false, 'feed' => false ),
-		'has_archive' => 'uslugi',
-		'query_var' => true,
-		'supports' => array( 'title', 'editor' ),
-		'taxonomies' => array( 'uslugi' ),
+		'show_in_nav_menus' => true,
+		'show_tagcloud' => false,
+		'hierarchical' => true,
+		'rewrite' => [ 'slug' => 'services' ],
+		'has_archive' => false,
+		'can_export' => true,
+		'supports' => [ 'title', 'thumbnail', 'page-attributes' ],
 	] );
+
+	add_rewrite_rule(
+		'^services/([^/]+)/?$',
+		'index.php?post_type=services&name=$matches[1]',
+		'top'
+	);
 }
 
-function uslugi_permalink( $permalink, $post ) {
-
-	// выходим если это не наш тип записи: без холдера %faqcat%
-	if ( strpos( $permalink, '%uslugi%' ) === false ) {
-		return $permalink;
+function services_flatten_hierarchies( $post_link, $post ) {
+	if ( 'services' != $post->post_type ) {
+		return $post_link;
 	}
-
-	// Получаем элементы таксы
-	$terms = get_the_terms( $post, 'uslugi' );
-	// если есть элемент заменим холдер
-	if ( ! is_wp_error( $terms ) && ! empty( $terms ) && is_object( $terms[0] ) ) {
-		$term_slug = array_pop( $terms )->slug;
+	$uri = '';
+	foreach ( $post->ancestors as $parent ) {
+		$uri = get_post( $parent )->post_name . "/" . $uri;
 	}
-	// элемента нет, а должен быть...
-	else {
-		$term_slug = 'no-uslugi';
-	}
-
-	return str_replace( '%uslugi%', $term_slug, $permalink );
+	return str_replace( $uri, '', $post_link );
 }
+add_filter( 'post_type_link', 'services_flatten_hierarchies', 10, 2 );
 
-/**
- * Убираем описание из редактирования категорий услуг
- */
-add_action( 'admin_head', 'hide_admin_uslugi_description' );
-function hide_admin_uslugi_description() {
-	echo '<style>
-          body.taxonomy-uslugi .term-description-wrap {
-              display:none;
-          }
-        </style>';
-}
+

@@ -17,12 +17,20 @@ get_header();
 
 	get_template_part( 'templates/sections/categories' );
 
+	// examples
+	
+	// get_template_part( 'templates/sections/video-reviews' );
+	
+	// tariffs
+	
 	get_template_part( 'templates/sections/reasons' );
 
 	get_template_part( 'templates/sections/hero', 'delivery' );
 
 	get_template_part( 'templates/sections/smeta' );
 
+	// price
+	
 	get_template_part( 'templates/sections/certificates' );
 
 	get_template_part( 'templates/sections/founder' );
