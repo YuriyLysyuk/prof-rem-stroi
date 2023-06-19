@@ -27,7 +27,7 @@ $buttonText = get_field( 'sales_button-text', 'option' );
 				<label class="form__control">
 					<i class="fa-solid fa-phone"></i>
 
-					<input type="tel" name="tel" placeholder="Ваш номер телефона" required />
+					<input class="js-phone-mask" type="text" name="tel" placeholder="Ваш номер телефона" required />
 				</label>
 
 				<button class="btn btn_small" type="submit">
