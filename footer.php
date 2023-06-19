@@ -111,7 +111,7 @@ $socialsList = get_field( 'socials_list', 'option' );
 	</div>
 
 	<div class="modal__body">
-		<form class="form form_vertical">
+		<form class="js-form form form_vertical">
 			<label class="form__control">
 				<i class="fa-solid fa-user"></i>
 

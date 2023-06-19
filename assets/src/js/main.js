@@ -1,6 +1,7 @@
 // Helpers
 import './helpers/header';
 import './helpers/modal';
+import './helpers/form';
 
 // Components
 import './components/ImageCompare';

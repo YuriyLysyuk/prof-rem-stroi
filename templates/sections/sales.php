@@ -17,7 +17,7 @@ $buttonText = get_field( 'sales_button-text', 'option' );
 		</h2>
 
 		<div class="sales__form">
-			<form class="form form_horisontal">
+			<form class="js-form form form_horisontal">
 				<label class="form__control">
 					<i class="fa-solid fa-user"></i>
 
@@ -29,6 +29,9 @@ $buttonText = get_field( 'sales_button-text', 'option' );
 
 					<input class="js-phone-mask" type="text" name="tel" placeholder="Ваш номер телефона" required />
 				</label>
+
+				<input type="hidden" name="admin_email" value="lysyuk.y@yandex.ru">
+				<input type="hidden" name="subject" value="Форма: как сэкономить">
 
 				<button class="btn btn_small" type="submit">
 					<?= esc_html( $buttonText ) ?>
