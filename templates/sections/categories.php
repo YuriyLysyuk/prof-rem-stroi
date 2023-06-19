@@ -24,6 +24,8 @@ if ( is_singular( 'services' ) ) {
 
 $items = get_posts( $args );
 
+$placeholderUrl = get_field( 'categories_placeholder', 'options' );
+
 ?>
 
 <?php if ( $items && ! is_wp_error( $items ) ) : ?>
@@ -46,7 +48,7 @@ $items = get_posts( $args );
 				$itemThumbnailUrl = get_field( 'common_thumbnail', $itemID );
 
 				if ( ! $itemThumbnailUrl ) {
-					$itemThumbnailUrl = 'https://loremflickr.com/720/405/home,room,design?random=' . $itemID;
+					$itemThumbnailUrl = $placeholderUrl;
 				}
 				?>
 				<a class="category" href="<?= esc_url( $itemUrl ) ?>">

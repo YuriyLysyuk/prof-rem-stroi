@@ -253,6 +253,58 @@
             ]
         },
         {
+            "key": "field_6490179c82dc6",
+            "label": "Категории",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_649017c682dc7",
+            "label": "Секция Categories",
+            "name": "categories",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_649017c682dc8",
+                    "label": "Ссылка на заполнитель",
+                    "name": "placeholder",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Показывается, если для категории нет картинки",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_643d2d0d1499f",
             "label": "Видео-отзывы",
             "name": "",
@@ -1107,5 +1159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681732694
+    "modified": 1687165494
 }
