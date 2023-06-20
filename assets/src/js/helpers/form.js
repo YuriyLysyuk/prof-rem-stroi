@@ -26,6 +26,7 @@ function onSubmitForm(e) {
         console.log('ToDo: добавить редирект на страницу спасибо');
 
         hideError(errorNode);
+        form.reset();
       } else {
         showError(errorNode, message);
       }
