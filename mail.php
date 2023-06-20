@@ -34,7 +34,7 @@ foreach ( $fields as $name => $options ) {
 /**
  * Обрабатываем файл сметы
  */
-if ( isset( $_FILES['file'] ) ) {
+if ( isset( $_FILES['file'] ) && $_FILES['file']['error'] !== 4 ) {
 	// Если файл загружен
 	if ( $_FILES['file']['error'] === UPLOAD_ERR_OK ) {
 		// получаем детали загруженного файла 
