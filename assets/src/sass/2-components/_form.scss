@@ -12,6 +12,19 @@
     gap: 2rem;
   }
 
+  .error {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 99, 71, 0.2);
+    border: 2px solid rgb(255, 99, 71);
+    border-radius: $default-radius;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
   &_horisontal {
     flex-direction: column;
 

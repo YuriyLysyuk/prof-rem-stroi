@@ -137,6 +137,8 @@ $socialsList = get_field( 'socials_list', 'option' );
 			</label>
 
 			<button class="btn btn_small" type="submit">Отправить</button>
+
+			<div class="js-error error error_hidden"></div>
 		</form>
 	</div>
 </section>
