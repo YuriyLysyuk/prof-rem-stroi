@@ -1,5 +1,7 @@
 <?php
-// Выходим, если это не отправка формы по POST
+$response = [];
+
+// Проверяем что форма отправлена по POST
 if ( $_SERVER["REQUEST_METHOD"] != "POST" ) {
 	exit();
 }
@@ -14,13 +16,75 @@ $fields = [
 		'label' => 'Телефон',
 		'value' => '',
 	],
+	'comment' => [ 
+		'label' => 'Комментарий',
+		'value' => '',
+	],
 ];
 
+// Обрабатываем полученные поля
 foreach ( $fields as $name => $options ) {
 	if ( isset( $_POST[ $name ] ) && ! empty( $_POST[ $name ] ) ) {
 		$fields[ $name ]['value'] = test_input( $_POST[ $name ] );
 	} else {
 		unset( $fields[ $name ] );
+	}
+}
+
+/**
+ * Обрабатываем файл сметы
+ */
+if ( isset( $_FILES['file'] ) ) {
+	// Если файл загружен
+	if ( $_FILES['file']['error'] === UPLOAD_ERR_OK ) {
+		// получаем детали загруженного файла 
+		$fileTmpPath = $_FILES['file']['tmp_name'];
+		$fileName = $_FILES['file']['name'];
+		$fileSize = $_FILES['file']['size'];
+		$fileType = $_FILES['file']['type'];
+		$fileNameCmps = explode( ".", $fileName );
+		$fileExtension = strtolower( end( $fileNameCmps ) );
+
+		// нормализуем имя файла
+		$newFileName = md5( time() . $fileName ) . '.' . $fileExtension;
+
+		// инициализируем массив допустимых разрешений
+		$allowedfileExtensions = [ 'txt', 'xls', 'xlsx', 'doc', 'docx', 'pdf' ];
+
+		if ( in_array( $fileExtension, $allowedfileExtensions ) ) {
+			// Директория для загрузки смет
+			// ToDo: исправить место сохранения файла в uploads WP
+			$uploadFileDir = './upload_files/';
+
+			$destPath = $uploadFileDir . $newFileName;
+
+			if ( move_uploaded_file( $fileTmpPath, $destPath ) ) {
+				$url = getFileUrl( $destPath );
+
+				$fields['file'] = [ 
+					'label' => 'Смета',
+					'value' => '<a href="' . $url . '" target="_blank">Открыть</a>'
+				];
+			} else {
+				// проблема с перемещением загруженного файла
+				$response['status'] = 'error';
+				$response['message'] = 'Ошибка при сохранении файла на сервере. Свяжитесь с администратором или попробуйте отправить еще раз';
+
+				send( $response );
+			}
+		} else {
+			// недопустимый тип файла
+			$response['status'] = 'error';
+			$response['message'] = 'Недопустимый тип файла, разрешены: ' . implode( ', ', $allowedfileExtensions );
+
+			send( $response );
+		}
+	} else {
+		// ошибка при загрузке файла
+		$response['status'] = 'error';
+		$response['message'] = 'Ошибка при загрузке файла: ' . $_FILES['file']['error'];
+
+		send( $response );
 	}
 }
 
@@ -36,19 +100,19 @@ $subject = ( isset( $_POST['subject'] ) ) ? test_input( $_POST['subject'] ) : '�
 
 // текст письма
 $message = '
-<html>
-<head>
-  <title>' . $subject . '</title>
-</head>
-<body>
-  <table border="1" bordercolor="#eee" cellspacing="0" cellpadding="5">
+    <html>
+    <head>
+      <title>' . $subject . '</title>
+    </head>
+    <body>
+      <table border="1" bordercolor="#eee" cellspacing="0" cellpadding="5">
 ';
 
 foreach ( $fields as $name => $options ) {
 	$message .= '
-  <tr>
-    <td>' . $options['label'] . '</td><td>' . $options['value'] . '</td>
-  </tr>
+      <tr>
+        <td>' . $options['label'] . '</td><td>' . $options['value'] . '</td>
+      </tr>
   ';
 }
 
@@ -64,8 +128,6 @@ $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=utf-8';
 
 // Отправляем
-$response = [];
-
 if ( mail( $to, $subject, $message, implode( "\r\n", $headers ) ) ) {
 	$response['status'] = 'success';
 	$response['message'] = 'Заявка отправлена';
@@ -74,13 +136,31 @@ if ( mail( $to, $subject, $message, implode( "\r\n", $headers ) ) ) {
 	$response['message'] = 'Ошибка при отправке заявки';
 }
 
-header( "Content-Type: application/json" );
-echo json_encode( $response );
-exit();
+send( $response );
 
 function test_input( $data ) {
 	$data = trim( $data );
 	$data = stripslashes( $data );
 	$data = htmlspecialchars( $data );
 	return $data;
+}
+
+function send( $response ) {
+	header( "Content-Type: application/json" );
+	echo json_encode( $response );
+
+	exit();
+}
+
+function getFileUrl( $filePath ) {
+	$protocol = $_SERVER['PROTOCOL'] = isset( $_SERVER['HTTPS'] ) && ! empty( $_SERVER['HTTPS'] ) ? 'https' : 'http';
+
+	$host = $_SERVER['HTTP_HOST'];
+
+	// ToDo: исправить место сохранения файла в uploads WP
+	$theme = 'wp-content/themes/prof-rem-stroi';
+
+	$url = $protocol . '://' . $host . '/' . $theme . '/' . str_replace( './', '', $filePath );
+
+	return $url;
 }

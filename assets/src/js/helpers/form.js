@@ -18,10 +18,12 @@ function onSubmitForm(e) {
     body: formData,
   })
     .then((response) => response.json())
-    .then(({ status }) => {
+    .then(({ status, message }) => {
       if (status === 'success') {
         console.log('ToDo: добавить цель Яндекс Метрики');
         console.log('ToDo: добавить редирект на страницу спасибо');
+      } else {
+        console.log(status, message);
       }
     })
     .catch((error) => console.log('Error: ', error));
