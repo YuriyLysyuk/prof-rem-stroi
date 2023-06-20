@@ -23,9 +23,9 @@ function onSubmitForm(e) {
     .then(({ status, message }) => {
       if (status === 'success') {
         console.log('ToDo: добавить цель Яндекс Метрики');
-        console.log('ToDo: добавить редирект на страницу спасибо');
 
         hideError(errorNode);
+        redirectToThankYouPage();
         form.reset();
       } else {
         showError(errorNode, message);
@@ -34,6 +34,7 @@ function onSubmitForm(e) {
     .catch((error) => console.log('Error: ', error));
 }
 
+// Показать ошибку
 function showError(node, message) {
   if (node) {
     node.textContent = message;
@@ -43,9 +44,23 @@ function showError(node, message) {
   }
 }
 
+// Скрыть ошибку
 function hideError(node) {
   if (node === null) return;
 
   node.textContent = '';
   node.classList.add('error_hidden');
+}
+
+// Вызов функции редиректа на страницу спасибо
+function redirectToThankYouPage() {
+  if (window?.prsOptions?.thankYouPage) {
+    setTimeout(() => {
+      window.location.assign(window.prsOptions.thankYouPage);
+    }, 0);
+  } else {
+    console.log(
+      'Добавьте ссылку на страницу Спасибо в window.prsOptions.thankYouPage'
+    );
+  }
 }
