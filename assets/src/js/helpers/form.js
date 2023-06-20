@@ -22,8 +22,7 @@ function onSubmitForm(e) {
     .then((response) => response.json())
     .then(({ status, message }) => {
       if (status === 'success') {
-        console.log('ToDo: добавить цель Яндекс Метрики');
-
+        reachYMFormGoal();
         hideError(errorNode);
         redirectToThankYouPage();
         form.reset();
@@ -62,5 +61,34 @@ function redirectToThankYouPage() {
     console.log(
       'Добавьте ссылку на страницу Спасибо в window.prsOptions.thankYouPage'
     );
+  }
+}
+
+// Срабатывание Яндекс Цели при успешной 
+function reachYMFormGoal() {
+  const errors = [];
+  const ymNumber = window?.prsOptions?.ym?.number;
+  const ymFormGoal = window?.prsOptions?.ym?.formGoal;
+
+  if (ymNumber === undefined) {
+    errors.push(
+      'Добавьте счетчик номера Яндекс Метрики в window.prsOptions.ym.number'
+    );
+  }
+
+  if (ymFormGoal === undefined) {
+    errors.push(
+      'Добавьте название цели Яндекс Метрики для успешной отправки формы window.prsOptions.ym.formGoal'
+    );
+  }
+
+  if (typeof ym === 'undefined') {
+    errors.push('Убедитесь что счетчик Яндекс Метрики установлен');
+  }
+
+  if (errors.length) {
+    errors.forEach((error) => console.log(error));
+  } else {
+    ym(ymNumber, ymFormGoal);
   }
 }
