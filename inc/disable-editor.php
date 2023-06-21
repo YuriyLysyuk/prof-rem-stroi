@@ -12,6 +12,7 @@ function prs_disable_editor( $id = false ) {
 
 	$excluded_templates = array(
 		'templates/front-page.php',
+		'templates/thank-you.php',
 	);
 
 	$excluded_ids = array(
