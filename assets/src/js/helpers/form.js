@@ -70,13 +70,13 @@ function reachYMFormGoal() {
   const ymNumber = window?.prsOptions?.ym?.number;
   const ymFormGoal = window?.prsOptions?.ym?.formGoal;
 
-  if (ymNumber === undefined) {
+  if (!ymNumber) {
     errors.push(
       'Добавьте счетчик номера Яндекс Метрики в window.prsOptions.ym.number'
     );
   }
 
-  if (ymFormGoal === undefined) {
+  if (!ymFormGoal) {
     errors.push(
       'Добавьте название цели Яндекс Метрики для успешной отправки формы window.prsOptions.ym.formGoal'
     );
