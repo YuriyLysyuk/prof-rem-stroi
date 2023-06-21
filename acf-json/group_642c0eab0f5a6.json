@@ -799,6 +799,26 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_6492fbcda8fe1",
+                    "label": "Заголовок заявки (Форма: обратная связь)",
+                    "name": "callback_subject",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
         }
@@ -821,5 +841,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687353484
+    "modified": 1687354350
 }

@@ -101,6 +101,8 @@ $socialsList = get_field( 'socials_list', 'option' );
 	</div>
 </footer>
 
+<?php get_template_part( 'templates/modals/callback' ); ?>
+
 <!-- Оверлей для модалок, всегда один -->
 <div class="js-overlay overlay hidden"></div>
 
