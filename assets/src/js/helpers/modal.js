@@ -1,36 +1,40 @@
-const overlay = document.querySelector('.js-overlay');
-const modals = document.querySelectorAll('[data-modal]');
-const openModalBtns = document.querySelectorAll('[data-modal-open]');
-const closeModalBtns = document.querySelectorAll('[data-modal-close]');
-
 // Объект со всеми модалками
 const modalsObj = {};
+const overlay = document.querySelector('.js-overlay');
 
-modals.forEach((modal) => {
-  const modalName = modal.dataset.modal;
+document.addEventListener('DOMContentLoaded', () => {
+  const modals = document.querySelectorAll('[data-modal]');
+  const openModalBtns = document.querySelectorAll('[data-modal-open]');
+  const closeModalBtns = document.querySelectorAll('[data-modal-close]');
 
-  modalsObj[modalName] = modal;
-});
+  modals.forEach((modal) => {
+    const modalName = modal.dataset.modal;
 
-// События
-openModalBtns.forEach((btn) => {
-  btn.addEventListener('click', openModal);
-});
+    modalsObj[modalName] = modal;
+  });
 
-closeModalBtns.forEach((btn) => {
-  btn.addEventListener('click', closeModal);
-});
+  // События
+  openModalBtns.forEach((btn) => {
+    btn.addEventListener('click', openModal);
+  });
 
-overlay.addEventListener('click', closeAllModals);
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener('click', closeModal);
+  });
 
-document.addEventListener('keydown', ({ key }) => {
-  if (key === 'Escape') {
-    closeAllModals();
-  }
+  overlay.addEventListener('click', closeAllModals);
+
+  document.addEventListener('keydown', ({ key }) => {
+    if (key === 'Escape') {
+      closeAllModals();
+    }
+  });
 });
 
 // Функции
 function openModal(event) {
+  event.preventDefault();
+
   const modalName = event.currentTarget.dataset.modalOpen;
 
   if (!isModalExist(modalName)) return;

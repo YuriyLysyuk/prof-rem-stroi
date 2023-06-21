@@ -1,7 +1,9 @@
 // Helpers
 import './helpers/header';
-import './helpers/modal';
 import './helpers/form';
+import './helpers/callback';
+import './helpers/modal'; // поместить в конец
+
 
 // Components
 import './components/ImageCompare';
