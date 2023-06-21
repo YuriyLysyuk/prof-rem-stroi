@@ -45,6 +45,11 @@ $buttonModalId = get_field( 'smeta_button-modal', 'option' );
 	</div>
 
 	<div class="modal__body">
+		<?php
+		$mailRecipient = get_field( 'email_recipient', 'options' );
+		$mailSmetaSubject = get_field( 'email_smeta_subject', 'options' );
+		?>
+
 		<form class="js-form form form_vertical" enctype="multipart/form-data">
 			<label class="form__control">
 				<i class="fa-solid fa-user"></i>
@@ -69,6 +74,9 @@ $buttonModalId = get_field( 'smeta_button-modal', 'option' );
 
 				<textarea name="comment" rows="5" placeholder="Комментарий"></textarea>
 			</label>
+
+			<input type="hidden" name="admin_email" value="<?= esc_attr( $mailRecipient ) ?>">
+			<input type="hidden" name="subject" value="<?= esc_attr( $mailSmetaSubject ) ?>">
 
 			<button class="btn btn_small" type="submit">Отправить</button>
 
