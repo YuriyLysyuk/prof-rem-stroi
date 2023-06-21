@@ -27,9 +27,24 @@ $workPromise = get_field( 'work_promise', 'option' );
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= esc_url( $favicon16Url ) ?>" />
 
 	<?php wp_head(); ?>
+
+	<?php
+	$headClose = get_field( 'insert_head-close', 'option' );
+
+	if ( $headClose ) {
+		echo $headClose;
+	}
+	?>
 </head>
 
 <body>
+	<?php
+	$bodyOpen = get_field( 'insert_body-open', 'option' );
+
+	if ( $bodyOpen ) {
+		echo $bodyOpen;
+	}
+	?>
 	<header class="js-header header">
 		<!-- Чекбокс открытия главного меню -->
 		<input class="menu-toggle__input" type="checkbox" id="menu-toggle" name="menu-toggle" />

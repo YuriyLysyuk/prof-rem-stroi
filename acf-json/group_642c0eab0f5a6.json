@@ -612,6 +612,101 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_6492db2e819ca",
+            "label": "Вставка кода",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6492db50819cb",
+            "label": "Вставка кода внутрь страниц",
+            "name": "insert",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6492db50819cc",
+                    "label": "Перед &lt;&frasl;head&gt;",
+                    "name": "head-close",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 15,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6492dc08c6390",
+                    "label": "После &lt;body&gt;",
+                    "name": "body-open",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 15,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6492dc39c6391",
+                    "label": "Перед &lt;&frasl; body&gt;",
+                    "name": "body-close",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 15,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -632,5 +727,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681734981
+    "modified": 1687346477
 }

@@ -106,6 +106,14 @@ $socialsList = get_field( 'socials_list', 'option' );
 
 <?php wp_footer(); ?>
 
+<?php
+$bodyClose = get_field( 'insert_body-close', 'option' );
+
+if ( $bodyClose ) {
+	echo $bodyClose;
+}
+?>
+
 </body>
 
 </html>
