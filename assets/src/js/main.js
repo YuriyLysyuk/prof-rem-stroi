@@ -2,6 +2,7 @@
 import './helpers/header';
 import './helpers/form';
 import './helpers/callback';
+import './helpers/sales';
 import './helpers/modal'; // поместить в конец
 
 
