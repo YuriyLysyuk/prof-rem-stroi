@@ -1,0 +1,38 @@
+@use '../0-settings/variables' as *;
+@use '../0-settings/include-media' as *;
+@use '../0-settings/placeholders';
+
+.page {
+  @extend %container;
+  padding-top: 8rem;
+
+  @include media('>=#{$mobile-menu-breakpoint}') {
+    padding-top: 17rem;
+  }
+
+  &__content {
+    margin-top: $block-padding-mobile;
+
+    @include media('>=sm') {
+      margin-top: 3rem;
+    }
+
+    @include media('>=#{$mobile-menu-breakpoint}') {
+      margin-top: 5rem;
+    }
+
+    & > * {
+      @extend %text-margin;
+    }
+
+    & h2 {
+      margin-top: 2.3rem;
+      margin-bottom: 2.3rem;
+
+      @include media('>=#{$mobile-menu-breakpoint}') {
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+      }
+    }
+  }
+}

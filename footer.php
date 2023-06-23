@@ -95,7 +95,8 @@ $socialsList = get_field( 'socials_list', 'option' );
 			<p class="footer__requisits">ИНН: 7709700742, ОГРН: 5067746662220</p>
 
 			<p class="footer__note">
-				Сайт не является публичной офертой и носит информационный характер.
+				Сайт не является публичной офертой и носит информационный характер. <br>
+				<a href="/privacy" target="_blank">Политика конфиденциальности</a>
 			</p>
 		</div>
 	</div>
