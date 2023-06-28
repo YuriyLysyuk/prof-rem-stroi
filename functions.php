@@ -9,6 +9,9 @@ if ( ! defined( 'PRS_VERSION' ) ) {
 	define( 'PRS_VERSION', '1.0.0' );
 }
 
+define( 'ASSETS_URL', get_stylesheet_directory_uri() . '/assets/build' );
+define( 'IMG_URL', ASSETS_URL . '/img' );
+
 /**
  * Предустановки темы
  */

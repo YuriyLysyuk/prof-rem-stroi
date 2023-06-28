@@ -23,7 +23,13 @@ $socialsList = get_field( 'socials_list', 'option' );
 					?>
 
 					<a class="social__link" href="<?= $socialUrl ?>" target="_blank" title="<?= $siteName ?> в <?= $socialTitle ?>">
-						<i class="fa-brands <?= $socialIconClass ?>"></i>
+						<?php
+						if ( str_contains( $socialIconClass, 'fa-' ) ) {
+							echo '<i class="fa-brands ' . $socialIconClass . '"></i>';
+						} else {
+							echo '<img class="social__link_img" src="' . IMG_URL . '/icons/' . $socialIconClass . '.svg"/>';
+						}
+						?>
 					</a>
 				<? endforeach; ?>
 			</div>

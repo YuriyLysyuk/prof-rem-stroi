@@ -8,6 +8,7 @@ import { faOdnoklassniki } from '@fortawesome/free-brands-svg-icons/faOdnoklassn
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons/faTiktok';
+import { faTelegram } from '@fortawesome/free-brands-svg-icons/faTelegram';
 
 // Solid
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
@@ -33,6 +34,7 @@ const icons = [
   faUser,
   faFile,
   faMessage,
+  faTelegram,
 ];
 
 library.add(icons);

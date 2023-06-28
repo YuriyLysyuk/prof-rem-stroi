@@ -1,0 +1,19 @@
+
+<svg fill="none" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#zen-icon_af4e--inline_a)">
+  <mask id="zen-icon_af4e--inline_b" x="0" y="0" width="24" height="24" style="mask-type:alpha" maskUnits="userSpaceOnUse">
+    <path d="M0 11.52C0 5.158 5.158 0 11.52 0c6.362 0 11.52 5.158 11.52 11.52 0 6.362-5.158 11.52-11.52 11.52C5.158 23.04 0 17.882 0 11.52z" fill="#fff"></path>
+  </mask>
+
+    <g mask="url(#zen-icon_af4e--inline_b)">
+      <path d="M0 11.52C0 5.158 5.158 0 11.52 0c6.362 0 11.52 5.158 11.52 11.52 0 6.362-5.158 11.52-11.52 11.52C5.158 23.04 0 17.882 0 11.52z" fill="#fff"></path>
+      <path d="M11.175 0c-.058 4.67-.377 7.295-2.128 9.046C7.295 10.798 4.67 11.116 0 11.175v.69c4.67.058 7.295.377 9.047 2.129 1.751 1.751 2.07 4.376 2.128 9.046h.69c.058-4.67.377-7.295 2.129-9.046 1.751-1.752 4.376-2.07 9.046-2.129v-.69c-4.67-.058-7.295-.377-9.046-2.129C12.242 7.295 11.924 4.67 11.865 0h-.69z" clip-rule="evenodd" fill="#5f5f5f" fill-rule="evenodd"></path>
+    </g>
+  </g>
+
+  <defs>
+    <clipPath id="zen-icon_af4e--inline_a">
+      <path fill="#5f5f5f" d="M0 0h23v24H0z"></path>
+    </clipPath>
+  </defs>
+</svg>

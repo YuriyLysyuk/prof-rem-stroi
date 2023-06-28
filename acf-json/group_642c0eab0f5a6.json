@@ -577,7 +577,11 @@
                                 "fa-odnoklassniki": "Одноклассники",
                                 "fa-youtube": "Youtube",
                                 "fa-square-facebook": "Facebook",
-                                "fa-tiktok": "Tiktok"
+                                "fa-tiktok": "Tiktok",
+                                "fa-telegram": "Telegram",
+                                "zen": "Дзен",
+                                "vc": "vc.ru",
+                                "tenchat": "Tenchat"
                             },
                             "default_value": false,
                             "return_format": "array",
@@ -841,5 +845,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687354350
+    "modified": 1687952854
 }
