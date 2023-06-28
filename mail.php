@@ -8,6 +8,10 @@ if ( $_SERVER["REQUEST_METHOD"] != "POST" ) {
 
 // Начальные значения всех полей
 $fields = [ 
+	'subject' => [ 
+		'label' => 'Форма',
+		'value' => '',
+	],
 	'name' => [ 
 		'label' => 'Имя',
 		'value' => '',
