@@ -7,6 +7,7 @@
 
 $mailRecipient = get_field( 'email_recipient', 'options' );
 $mailSmetaSubject = get_field( 'email_callback_subject', 'options' );
+$currentPageUrl = home_url( $_SERVER['REQUEST_URI'] );
 
 ?>
 
@@ -41,6 +42,7 @@ $mailSmetaSubject = get_field( 'email_callback_subject', 'options' );
 
 			<input type="hidden" name="admin_email" value="<?= esc_attr( $mailRecipient ) ?>">
 			<input type="hidden" name="subject" value="<?= esc_attr( $mailSmetaSubject ) ?>">
+			<input type="hidden" name="page" value="<?= esc_attr( $currentPageUrl ) ?>">
 
 			<button class="btn btn_small" type="submit">Перезвоните мне</button>
 		</form>

@@ -7,6 +7,7 @@
 
 $title = get_field( 'sales_title', 'option' );
 $buttonText = get_field( 'sales_button-text', 'option' );
+$currentPageUrl = home_url( $_SERVER['REQUEST_URI'] );
 
 ?>
 
@@ -37,6 +38,7 @@ $buttonText = get_field( 'sales_button-text', 'option' );
 
 				<input type="hidden" name="admin_email" value="<?= esc_attr( $mailRecipient ) ?>">
 				<input type="hidden" name="subject" value="<?= esc_attr( $mailSaleSubject ) ?>">
+				<input type="hidden" name="page" value="<?= esc_attr( $currentPageUrl ) ?>">
 
 				<button class="btn btn_small" type="submit">
 					<?= esc_html( $buttonText ) ?>

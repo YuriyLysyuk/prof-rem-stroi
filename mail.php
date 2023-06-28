@@ -20,6 +20,11 @@ $fields = [
 		'label' => 'Комментарий',
 		'value' => '',
 	],
+	'page' => [ 
+		'label' => 'Страница',
+		'value' => '',
+		'type' => 'link',
+	],
 ];
 
 // Обрабатываем полученные поля
@@ -109,11 +114,20 @@ $message = '
 ';
 
 foreach ( $fields as $name => $options ) {
-	$message .= '
-      <tr>
-        <td>' . $options['label'] . '</td><td>' . $options['value'] . '</td>
-      </tr>
-  ';
+	if ( isset( $options['type'] ) && $options['type'] === 'link' ) {
+		$message .= '
+    <tr>
+      <td>' . $options['label'] . '</td><td><a href="' . $options['value'] . '" target="_blank">' . $options['value'] . '</a></td>
+    </tr>
+    ';
+	} else {
+		$message .= '
+    <tr>
+      <td>' . $options['label'] . '</td><td>' . $options['value'] . '</td>
+    </tr>
+    ';
+	}
+
 }
 
 $message .= '
