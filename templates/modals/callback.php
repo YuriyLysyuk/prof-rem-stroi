@@ -33,6 +33,12 @@ $mailSmetaSubject = get_field( 'email_callback_subject', 'options' );
 				<input class="js-phone-mask" type="text" name="tel" placeholder="Ваш номер телефона" required />
 			</label>
 
+			<label class="form__control">
+				<i class="fa-solid fa-message"></i>
+
+				<textarea name="comment" rows="5" placeholder="Комментарий"></textarea>
+			</label>
+
 			<input type="hidden" name="admin_email" value="<?= esc_attr( $mailRecipient ) ?>">
 			<input type="hidden" name="subject" value="<?= esc_attr( $mailSmetaSubject ) ?>">
 
