@@ -9,6 +9,13 @@ $isShow = get_field( 'video-reviews_show', 'option' );
 $title = get_field( 'video-reviews_title', 'option' );
 $list = get_field( 'video-reviews_list', 'option' );
 
+$randomItems = null;
+
+if ( $list ) {
+	$randomIds = array_rand( $list, VIDEO_REVIEWS_COUNT );
+	shuffle( $randomIds );
+}
+
 ?>
 
 <? if ( $isShow && $list ) : ?>
@@ -21,9 +28,12 @@ $list = get_field( 'video-reviews_list', 'option' );
 
 			<div class="js-video-reviews swiper swiper_video-reviews">
 				<div class="swiper-wrapper">
-					<? foreach ( $list as $videoReview ) : ?>
-
+					<? foreach ( $list as $id => $videoReview ) : ?>
 						<?php
+						if ( in_array( $id, $randomIds ) === false ) {
+							continue;
+						}
+
 						$videoReviewTitle = $videoReview['title'];
 						$videoReviewAddress = $videoReview['address'];
 						$videoReviewCustomer = $videoReview['customer'];

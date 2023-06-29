@@ -12,6 +12,8 @@ if ( ! defined( 'PRS_VERSION' ) ) {
 define( 'ASSETS_URL', get_stylesheet_directory_uri() . '/assets/build' );
 define( 'IMG_URL', ASSETS_URL . '/img' );
 
+define( 'VIDEO_REVIEWS_COUNT', 4 );
+
 /**
  * Предустановки темы
  */
