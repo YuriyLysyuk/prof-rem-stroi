@@ -5,12 +5,13 @@
  * @package prof-rem-stroi
  */
 
+$isShow = get_field( 'video-reviews_show', 'option' );
 $title = get_field( 'video-reviews_title', 'option' );
 $list = get_field( 'video-reviews_list', 'option' );
 
 ?>
 
-<? if ( $list ) : ?>
+<? if ( $isShow && $list ) : ?>
 
 	<section class="video-reviews" id="video-reviews">
 		<div class="video-reviews__inner">
