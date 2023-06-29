@@ -18,6 +18,8 @@ get_header();
 
 	get_template_part( 'templates/sections/categories' );
 
+	get_template_part( 'templates/sections/examples' );
+
 	get_template_part( 'templates/sections/video-reviews' );
 
 	
