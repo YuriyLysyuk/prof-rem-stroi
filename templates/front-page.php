@@ -30,6 +30,8 @@ get_header();
 
 	get_template_part( 'templates/sections/smeta' );
 
+	get_template_part( 'templates/sections/price' );
+
 	get_template_part( 'templates/sections/certificates' );
 
 	get_template_part( 'templates/sections/founder' );
