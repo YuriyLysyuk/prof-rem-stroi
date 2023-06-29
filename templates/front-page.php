@@ -16,9 +16,10 @@ get_header();
 
 	get_template_part( 'templates/sections/numbers' );
 
+	get_template_part( 'templates/sections/categories' );
+
 	get_template_part( 'templates/sections/video-reviews' );
 
-	get_template_part( 'templates/sections/categories' );
 	
 	get_template_part( 'templates/sections/reasons' );
 

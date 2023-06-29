@@ -46,8 +46,11 @@ $list = get_field( 'video-reviews_list', 'option' );
 								</p>
 							</div>
 
-							<iframe class="video" src="<?= esc_url( $videoReviewUrl ) ?>" frameborder="0"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+							<?php if ( $videoReviewUrl ) : ?>
+								<iframe class="video" src="<?= esc_url( $videoReviewUrl ) ?>" frameborder="0"
+									allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+							<?php endif; // if ($videoReviewUrl): ?>
+
 						</div>
 					<? endforeach; ?>
 				</div>
@@ -59,5 +62,6 @@ $list = get_field( 'video-reviews_list', 'option' );
 			</div>
 		</div>
 	</section>
+
 <? endif; ?>
 
