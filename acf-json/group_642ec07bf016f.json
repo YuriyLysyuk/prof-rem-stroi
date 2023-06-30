@@ -774,6 +774,296 @@
             ]
         },
         {
+            "key": "field_649e7fa89be72",
+            "label": "Тарифы",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_649e7fac9be73",
+            "label": "Секция Tariffs",
+            "name": "tariffs",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_649e7fac9be74",
+                    "label": "Показывать секцию",
+                    "name": "show",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_649e7fac9be75",
+                    "label": "Заголовок",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Что бы выделить часть заголовка, оберните ее в html-тег span.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_649e7fac9be76",
+                    "label": "Список работ",
+                    "name": "list",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 3,
+                    "max": 3,
+                    "collapsed": "",
+                    "button_label": "Добавить",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_649e812c9be81",
+                            "label": "Выделен?",
+                            "name": "is-accent",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1,
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e7fac9be77",
+                            "label": "Заголовок",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e7fac9be79",
+                            "label": "Старая цена",
+                            "name": "old-cost",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e80579be7f",
+                            "label": "Новая цена",
+                            "name": "new-cost",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e821b7ee5f",
+                            "label": "В стоимость входит",
+                            "name": "included",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e7fac9be7a",
+                            "label": "Список работ",
+                            "name": "works",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Добавить",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_649e7fac9be7b",
+                                    "label": "Описание работы",
+                                    "name": "desc",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_649e7fac9be7a"
+                                }
+                            ],
+                            "parent_repeater": "field_649e7fac9be76"
+                        },
+                        {
+                            "key": "field_649e80c49be80",
+                            "label": "Материалы",
+                            "name": "materials",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649e7fac9be76"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_649e8e33d6612",
+                    "label": "Резюме",
+                    "name": "resume",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Что бы выделить часть заголовка, оберните ее в html-тег span.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
             "key": "field_642eeb31f2c5b",
             "label": "Причины",
             "name": "",
@@ -1468,5 +1758,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688049275
+    "modified": 1688112710
 }

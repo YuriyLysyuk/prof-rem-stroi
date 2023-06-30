@@ -5,120 +5,105 @@
  * @package prof-rem-stroi
  */
 
-// $isShow = get_field( 'video-reviews_show', 'option' );
-// $title = get_field( 'video-reviews_title', 'option' );
-// $list = get_field( 'video-reviews_list', 'option' );
+$isShow = get_field( 'tariffs_show', 'option' );
+$title = get_field( 'tariffs_title', 'option' );
+$list = get_field( 'tariffs_list', 'option' );
+$resume = get_field( 'tariffs_resume', 'option' );
+
+$count = 1;
 
 ?>
 
-<? //if ( $isShow && $list ) : ?>
+<? if ( $isShow && $list ) : ?>
 
-  <section class="tariffs" id="tariffs">
+	<section class="tariffs" id="tariffs">
 		<div class="tariffs__inner">
-			<h2><span>Стоимость ремонта</span></h2>
+			<h2>
+				<?= $title ?>
+			</h2>
 
 			<div class="tariffs__grid">
-				<div class="tariff">
-					<h3 class="tariff__title">Черновой ремонт новостройки</h3>
 
-					<p class="tariff__old-price">от 6 100 ₽ м² по полу</p>
+				<? foreach ( $list as $tariff ) : ?>
 
-					<p class="tariff__new-price"><span>от 4 880 ₽ м²</span></p>
+					<?php
 
-					<p class="tariff__price-desc">по полу</p>
+					$isAccent = $tariff['is-accent'];
+					$title = esc_html( $tariff['title'] );
+					$oldCost = esc_html( $tariff['old-cost'] );
+					$newCost = esc_html( $tariff['new-cost'] );
+					$included = esc_html( $tariff['included'] );
+					$works = $tariff['works'];
+					$materials = esc_html( $tariff['materials'] );
 
-					<p><strong>В стоимость входит:</strong></p>
+					?>
+					<div class="tariff <?= $isAccent ? 'tariff_active' : '' ?>">
+						<h3 class="tariff__title">
+							<?= $title ?>
+						</h3>
 
-					<p>
-						Демонтажные, черновые и чистовые работы, работы по электрике.
-					</p>
+						<p class="tariff__old-price">от
+							<?= $oldCost ?> ₽ м² по полу
+						</p>
 
-					<input class="tariff__toggle-input" id="chernovoy" type="checkbox" />
+						<p class="tariff__new-price"><span>от
+								<?= $newCost ?> ₽ м²
+							</span></p>
 
-					<label class="tariff__toggle-label" for="chernovoy">Список работ</label>
+						<p class="tariff__price-desc">по полу</p>
 
-					<ul class="tariff__work-list">
-						<li>Поклеим новые обои</li>
-						<li>Постелим новый линолиум или ковролин</li>
-						<li>Установим плинтусы</li>
-						<li>Установим новые электроточки</li>
-					</ul>
+						<p><strong>В стоимость входит:</strong></p>
 
-					<p><strong>Материалы:</strong> не входят в стоимость</p>
+						<p>
+							<?= $included ?>
+						</p>
 
-					<a class="btn tariff__btn" href="#">Узнать стоимость ремонта <span> за 1 минуту</span></a>
-				</div>
+						<?php if ( $works ) : ?>
 
-				<div class="tariff tariff_active">
-					<h3 class="tariff__title">Капитальный ремонт новостройки</h3>
+							<input class="tariff__toggle-input" id="tariff_<?= $count ?>" type="checkbox" />
 
-					<p class="tariff__old-price">от 9 840 ₽ м² по полу</p>
+							<label class="tariff__toggle-label" for="tariff_<?= $count ?>">Список работ</label>
 
-					<p class="tariff__new-price"><span>от 8 390 ₽ м²</span></p>
+							<ul class="tariff__work-list">
 
-					<p class="tariff__price-desc">по полу</p>
+								<?php foreach ( $works as $work ) : ?>
 
-					<p><strong>В стоимость входит:</strong></p>
+									<li>
+										<?= esc_html( $work['desc'] ) ?>
+									</li>
 
-					<p>
-						Демонтажные, черновые и чистовые работы, работы по электрике,
-						разводка труб.
-					</p>
+								<?php endforeach; // foreach ($works as $work): ?>
 
-					<input class="tariff__toggle-input" id="pod_kluch" type="checkbox" />
+							</ul>
 
-					<label class="tariff__toggle-label" for="pod_kluch">Список работ</label>
+						<?php endif; // if ($works): ?>
 
-					<ul class="tariff__work-list">
-						<li>Поклеим новые обои</li>
-						<li>Постелим новый линолиум или ковролин</li>
-						<li>Установим плинтусы</li>
-						<li>Установим новые электроточки</li>
-					</ul>
+						<p>
+							<strong>Материалы:</strong>
+							<?= $materials ?>
+						</p>
 
-					<p><strong>Материалы:</strong> не входят в стоимость</p>
+						<a class="btn tariff__btn" href="#">Узнать стоимость ремонта <span> за 1 минуту</span></a>
+					</div>
 
-					<a class="btn tariff__btn" href="#">Узнать стоимость ремонта <span> за 1 минуту</span></a>
-				</div>
+					<?php
 
-				<div class="tariff">
-					<h3 class="tariff__title">Чистовой ремонт новостройки</h3>
+					$count++;
 
-					<p class="tariff__old-price">от 4 210 ₽ м² по полу</p>
+					?>
 
-					<p class="tariff__new-price"><span>от 3 510 ₽ м²</span></p>
+				<?php endforeach; ?>
 
-					<p class="tariff__price-desc">по полу</p>
-
-					<p><strong>В стоимость входит:</strong></p>
-
-					<p>
-						Демонтажные, черновые и чистовые работы, все электротехнические
-						и сантехнические работы, возведение перегородок.
-					</p>
-
-					<input class="tariff__toggle-input" id="chistovoy" type="checkbox" />
-
-					<label class="tariff__toggle-label" for="chistovoy">Список работ</label>
-
-					<ul class="tariff__work-list">
-						<li>Поклеим новые обои</li>
-						<li>Постелим новый линолиум или ковролин</li>
-						<li>Установим плинтусы</li>
-						<li>Установим новые электроточки</li>
-					</ul>
-
-					<p><strong>Материалы:</strong> не входят в стоимость</p>
-
-					<a class="btn tariff__btn" href="#">Узнать стоимость ремонта <span> за 1 минуту</span></a>
-				</div>
 			</div>
 
 			<div class="tariffs__resume">
-				<div class="text">Ответив всего на 5 вопросов</div>
+				<div class="text">
+					<?= $resume ?>
+				</div>
 			</div>
 		</div>
 	</section>
 
-<? //endif; ?>
+
+<? endif; ?>
 
