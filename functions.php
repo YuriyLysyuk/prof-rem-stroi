@@ -14,6 +14,8 @@ define( 'IMG_URL', ASSETS_URL . '/img' );
 
 define( 'VIDEO_REVIEWS_COUNT', 4 );
 
+define( 'COLLAPSED_TABLE_WORK_COUNT', 10 );
+
 /**
  * Предустановки темы
  */

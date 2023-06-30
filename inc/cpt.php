@@ -59,5 +59,3 @@ function services_flatten_hierarchies( $post_link, $post ) {
 	return str_replace( $uri, '', $post_link );
 }
 add_filter( 'post_type_link', 'services_flatten_hierarchies', 10, 2 );
-
-

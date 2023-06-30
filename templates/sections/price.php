@@ -5,301 +5,121 @@
  * @package prof-rem-stroi
  */
 
-// $isShow = get_field( 'video-reviews_show', 'option' );
-// $title = get_field( 'video-reviews_title', 'option' );
-// $list = get_field( 'video-reviews_list', 'option' );
+$isShow = get_field( 'price_show', 'option' );
+$title = get_field( 'price_title', 'option' );
+$list = get_field( 'price_list', 'option' );
+
+$count = 1;
+$isFirstPrice = true;
 
 ?>
 
-<? //if ( $isShow && $list ) : ?>
+<? if ( $isShow && $list ) : ?>
 
-<section class="price">
-	<div class="price__inner">
-		<h2>Цены по видам работ</h2>
+	<section class="price">
+		<div class="price__inner">
+			<h2>
+				<?= $title ?>
+			</h2>
 
-		<div class="price__content">
-			<input class="price__radio" type="radio" name="price" id="price1" checked />
+			<div class="price__content">
 
-			<label class="price__label btn btn_tiny btn_ghost" for="price1">Бюджетный ремонт квартиры</label>
+				<? foreach ( $list as $price ) : ?>
 
-			<div class="price__wrap">
-				<input type="checkbox" id="price1_full" />
+					<?php
 
-				<div class="price__table price__table_collapse">
-					<table>
-						<thead>
-							<tr>
-								<th>
-									<p>Наименование</p>
-								</th>
-								<th>
-									<p>Количество</p>
-								</th>
-								<th>
-									<p>Цена</p>
-								</th>
-							</tr>
-						</thead>
+					$priceTitle = esc_html( $price['title'] );
 
-						<tbody>
-							<tr>
-								<td>Укладка напольной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>700 ₽</td>
-							</tr>
+					$works = $price['works'];
+					$worksCount = 0;
 
-							<tr>
-								<td>Штукатурка стен слоем до 1 см</td>
-								<td>м²</td>
-								<td>300 ₽</td>
-							</tr>
+					if ( $works ) {
+						$worksCount = count( $works );
+					}
 
-							<tr>
-								<td>Укладка настенной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>900 ₽</td>
-							</tr>
+					$isCollapsedTable = false;
 
-							<tr>
-								<td>Установка смесителя</td>
-								<td>шт</td>
-								<td>1000 ₽</td>
-							</tr>
+					if ( $worksCount > COLLAPSED_TABLE_WORK_COUNT ) {
+						$isCollapsedTable = true;
+					}
 
-							<tr>
-								<td>Установка умывальника</td>
-								<td>шт</td>
-								<td>1600 ₽</td>
-							</tr>
+					?>
 
-							<tr>
-								<td>Установка полотенцесушителя</td>
-								<td>шт</td>
-								<td>2500 ₽</td>
-							</tr>
+					<input class="price__radio" type="radio" name="price" id="price_<?= $count ?>" <?= $isFirstPrice ? 'checked' : '' ?> />
 
-							<tr>
-								<td>Установка ванны</td>
-								<td>шт</td>
-								<td>2400 ₽</td>
-							</tr>
+					<label class="price__label btn btn_tiny btn_ghost" for="price_<?= $count ?>">
+						<?= $priceTitle ?>
+					</label>
 
-							<tr>
-								<td>Устройство реечного потолка</td>
-								<td>м²</td>
-								<td>620 ₽</td>
-							</tr>
+					<div class="price__wrap">
 
-							<tr>
-								<td>Установка унитаза напольного</td>
-								<td>шт</td>
-								<td>2000 ₽</td>
-							</tr>
+						<?php if ( $isCollapsedTable ) : ?>
 
-							<tr>
-								<td>Установка точечного светильника</td>
-								<td>шт</td>
-								<td>200 ₽</td>
-							</tr>
+							<input type="checkbox" id="price_collapsed_<?= $count ?>" />
 
-							<tr>
-								<td>Устройство реечного потолка</td>
-								<td>м²</td>
-								<td>620 ₽</td>
-							</tr>
+						<?php endif; // if ($isCollapsedTable): ?>
 
-							<tr>
-								<td>Установка унитаза напольного</td>
-								<td>шт</td>
-								<td>2000 ₽</td>
-							</tr>
+						<div class="price__table <?= $isCollapsedTable ? 'price__table_collapse' : '' ?>">
+							<table>
+								<thead>
+									<tr>
+										<th>
+											<p>Наименование</p>
+										</th>
+										<th>
+											<p>Мера</p>
+										</th>
+										<th>
+											<p>Цена</p>
+										</th>
+									</tr>
+								</thead>
 
-							<tr>
-								<td>Установка точечного светильника</td>
-								<td>шт</td>
-								<td>200 ₽</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+								<tbody>
+									<?php if ( $works ) : ?>
 
-				<label class="btn" for="price1_full">Развернуть</label>
-			</div>
+										<?php foreach ( $works as $work ) : ?>
 
-			<input class="price__radio" type="radio" name="price" id="price2" />
+											<tr>
+												<td>
+													<?= esc_html( $work['desc'] ) ?>
+												</td>
+												<td>
+													<?= esc_html( $work['unit'] ) ?>
+												</td>
+												<td>
+													<?= esc_html( $work['cost'] ) ?> ₽
+												</td>
+											</tr>
 
-			<label class="price__label btn btn_tiny btn_ghost" for="price2">Капитальный ремонт квартиры</label>
+										<?php endforeach; // foreach ( $works  as $work) : ?>
 
-			<div class="price__wrap">
-				<div class="price__table">
-					<table>
-						<thead>
-							<tr>
-								<th>
-									<p>Наименование</p>
-								</th>
-								<th>
-									<p>Количество</p>
-								</th>
-								<th>
-									<p>Цена</p>
-								</th>
-							</tr>
-						</thead>
+									<?php endif; // if ( $works ): ?>
 
-						<tbody>
-							<tr>
-								<td>Укладка напольной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>800 ₽</td>
-							</tr>
+								</tbody>
+							</table>
+						</div>
 
-							<tr>
-								<td>Штукатурка стен слоем до 1 см</td>
-								<td>м²</td>
-								<td>300 ₽</td>
-							</tr>
+						<?php if ( $isCollapsedTable ) : ?>
 
-							<tr>
-								<td>Укладка настенной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>900 ₽</td>
-							</tr>
+							<label class="btn" for="price_collapsed_<?= $count ?>">Развернуть</label>
 
-							<tr>
-								<td>Установка смесителя</td>
-								<td>шт</td>
-								<td>1000 ₽</td>
-							</tr>
+						<?php endif; // if ($isCollapsedTable): ?>
 
-							<tr>
-								<td>Установка умывальника</td>
-								<td>шт</td>
-								<td>1600 ₽</td>
-							</tr>
+					</div>
 
-							<tr>
-								<td>Установка полотенцесушителя</td>
-								<td>шт</td>
-								<td>2500 ₽</td>
-							</tr>
+					<?php
 
-							<tr>
-								<td>Установка ванны</td>
-								<td>шт</td>
-								<td>2400 ₽</td>
-							</tr>
+					$isFirstPrice = false;
+					$count++;
 
-							<tr>
-								<td>Устройство реечного потолка</td>
-								<td>м²</td>
-								<td>620 ₽</td>
-							</tr>
+					?>
 
-							<tr>
-								<td>Установка унитаза напольного</td>
-								<td>шт</td>
-								<td>2000 ₽</td>
-							</tr>
+				<?php endforeach; ?>
 
-							<tr>
-								<td>Установка точечного светильника</td>
-								<td>шт</td>
-								<td>200 ₽</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-
-			<input class="price__radio" type="radio" name="price" id="price3" />
-
-			<label class="price__label btn btn_tiny btn_ghost" for="price3">Дизайнерский ремонт квартиры</label>
-
-			<div class="price__wrap">
-				<div class="price__table">
-					<table>
-						<thead>
-							<tr>
-								<th>
-									<p>Наименование</p>
-								</th>
-								<th>
-									<p>Количество</p>
-								</th>
-								<th>
-									<p>Цена</p>
-								</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<td>Укладка напольной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>900 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Штукатурка стен слоем до 1 см</td>
-								<td>м²</td>
-								<td>300 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Укладка настенной керамической плитки 30х30 см</td>
-								<td>м²</td>
-								<td>900 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка смесителя</td>
-								<td>шт</td>
-								<td>1000 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка умывальника</td>
-								<td>шт</td>
-								<td>1600 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка полотенцесушителя</td>
-								<td>шт</td>
-								<td>2500 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка ванны</td>
-								<td>шт</td>
-								<td>2400 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Устройство реечного потолка</td>
-								<td>м²</td>
-								<td>620 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка унитаза напольного</td>
-								<td>шт</td>
-								<td>2000 ₽</td>
-							</tr>
-
-							<tr>
-								<td>Установка точечного светильника</td>
-								<td>шт</td>
-								<td>200 ₽</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<? //endif; ?>
+<? endif; ?>
 
