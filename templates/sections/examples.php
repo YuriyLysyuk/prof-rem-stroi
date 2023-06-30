@@ -5,443 +5,151 @@
  * @package prof-rem-stroi
  */
 
-// $isShow = get_field( 'video-reviews_show', 'option' );
-// $title = get_field( 'video-reviews_title', 'option' );
-// $list = get_field( 'video-reviews_list', 'option' );
+$isShow = get_field( 'examples_show', 'option' );
+$title = get_field( 'examples_title', 'option' );
+$list = get_field( 'examples_list', 'option' );
+
+$count = 1;
 
 ?>
 
-<? //if ( $isShow && $list ) : ?>
+<? if ( $isShow && $list ) : ?>
 
-<section class="examples" id="examples">
-	<h2><span>Примеры наших работ</span> и их стоимость</h2>
+	<section class="examples" id="examples">
+		<h2>
+			<?= $title ?>
+		</h2>
 
-	<div class="examples__grid">
-		<div class="example">
-			<h3 class="example__title">Капитальный ремонт студии 35 м²</h3>
+		<div class="examples__grid">
+			<? foreach ( $list as $example ) : ?>
 
-			<div class="example__content">
-				<div class="example__slider">
-					<div class="js-example-1 swiper swiper_example">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="image-compare">
-									<img src="<?= IMG_URL ?>/examples/example-1-before.jpg" loading="lazy" />
+				<?php
 
-									<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
+				$title = esc_html( $example['title'] );
+				$imgBeforeUrl = esc_url( $example['img-before'] );
+				$imgAfterUrl = esc_url( $example['img-after'] );
+				$imgMore = $example['img-more'];
+				$completedWorks = $example['completed-works'];
+				$repairPeriod = esc_html( $example['repair-period'] );
+				$repairCost = esc_html( $example['repair-cost'] );
+
+				$thumbnails = [];
+				$thumbnails[] = $imgAfterUrl;
+
+				if ( $imgMore ) {
+					foreach ( $imgMore as $thumbnail ) {
+						$thumbnails[] = esc_url( $thumbnail );
+					}
+				}
+
+				?>
+
+				<div class="example">
+					<h3 class="example__title">
+						<?= $title ?>
+					</h3>
+
+					<div class="example__content">
+						<div class="example__slider">
+							<div class="js-example-<?= $count ?> swiper swiper_example">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="image-compare">
+											<img src="<?= $imgBeforeUrl ?>" loading="lazy" />
+
+											<img src="<?= $imgAfterUrl ?>" loading="lazy" />
+										</div>
+
+										<div class="swiper-lazy-preloader"></div>
+									</div>
+
+									<?php if ( $imgMore ) : ?>
+
+										<?php foreach ( $imgMore as $imgFullUrl ) : ?>
+
+											<div class="swiper-slide">
+												<img src="<?= esc_url( $imgFullUrl ) ?>" loading="lazy" />
+
+												<div class="swiper-lazy-preloader"></div>
+											</div>
+
+										<?php endforeach; // foreach ( $imgMore as $imgUrl) : ?>
+
+									<?php endif; // if ($imgMore): ?>
+
 								</div>
 
-								<div class="swiper-lazy-preloader"></div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
 							</div>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
+							<div class="js-example-thumbs-<?= $count ?> swiper swiper_example-thumbs">
+								<div class="swiper-wrapper">
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+									<?php if ( $thumbnails ) : ?>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
+										<?php foreach ( $thumbnails as $thumbnailUrl ) : ?>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+											<div class="swiper-slide">
+												<img src="<?= $thumbnailUrl ?>" loading="lazy" />
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
+												<div class="swiper-lazy-preloader"></div>
+											</div>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+										<?php endforeach; // foreach ( $thumbnails as $thumbnailUrl) : ?>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
+									<?php endif; // if ($thumbnails): ?>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-
-					<div class="js-example-thumbs-1 swiper swiper_example-thumbs">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="example__text">
-					<p><strong>Выполненные работы:</strong></p>
-
-					<ul>
-						<li>Стяжка пола до 6 см</li>
-						<li>Укладка ламината</li>
-						<li>Монтаж плинтусов</li>
-						<li>Частичная штукатурка стен</li>
-						<li>Установка подоконников</li>
-						<li>Окраска стен в 2 слоя</li>
-						<li>Облицовка плиткой пола в ванной</li>
-						<li>Облицовка плиткой стен в ванной</li>
-					</ul>
-
-					<p><strong>Срок ремонта:</strong></p>
-
-					<p>24 дня</p>
-
-					<p><strong>Стоимость ремонта:</strong></p>
-
-					<p>450 000 ₽</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="example">
-			<h3 class="example__title">Капитальный ремонт студии 35 м²</h3>
-
-			<div class="example__content">
-				<div class="example__slider">
-					<div class="js-example-2 swiper swiper_example">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="image-compare">
-									<img src="<?= IMG_URL ?>/examples/example-1-before.jpg" loading="lazy" />
-
-									<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
 								</div>
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
 							</div>
 						</div>
 
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
+						<div class="example__text">
 
-					<div class="js-example-thumbs-2 swiper swiper_example-thumbs">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
+							<?php if ( $completedWorks ) : ?>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+								<p><strong>Выполненные работы:</strong></p>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
+								<ul>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+									<?php foreach ( $completedWorks as $work ) : ?>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
+										<li>
+											<?= esc_html( $work['desc'] ) ?>
+										</li>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+									<?php endforeach; // foreach ($completedWorks as $work): ?>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
+								</ul>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+							<?php endif; // if ($completedWorks): ?>
 
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
+							<p><strong>Срок ремонта:</strong></p>
 
-								<div class="swiper-lazy-preloader"></div>
-							</div>
+							<p>
+								<?= $repairPeriod ?>
+							</p>
+
+							<p><strong>Стоимость ремонта:</strong></p>
+
+							<p>
+								<?= $repairCost ?>
+							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="example__text">
-					<p><strong>Выполненные работы:</strong></p>
+				<?php
 
-					<ul>
-						<li>Стяжка пола до 6 см</li>
-						<li>Укладка ламината</li>
-						<li>Монтаж плинтусов</li>
-						<li>Частичная штукатурка стен</li>
-						<li>Установка подоконников</li>
-						<li>Окраска стен в 2 слоя</li>
-						<li>Облицовка плиткой пола в ванной</li>
-						<li>Облицовка плиткой стен в ванной</li>
-					</ul>
+				$count++;
 
-					<p><strong>Срок ремонта:</strong></p>
+				?>
 
-					<p>24 дня</p>
+			<?php endforeach; ?>
 
-					<p><strong>Стоимость ремонта:</strong></p>
 
-					<p>450 000 ₽</p>
-				</div>
-			</div>
 		</div>
+	</section>
 
-		<div class="example">
-			<h3 class="example__title">Капитальный ремонт студии 35 м²</h3>
-
-			<div class="example__content">
-				<div class="example__slider">
-					<div class="js-example-3 swiper swiper_example">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="image-compare">
-									<img src="<?= IMG_URL ?>/examples/example-1-before.jpg" loading="lazy" />
-
-									<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
-								</div>
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-
-					<div class="js-example-thumbs-3 swiper swiper_example-thumbs">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="example__text">
-					<p><strong>Выполненные работы:</strong></p>
-
-					<ul>
-						<li>Стяжка пола до 6 см</li>
-						<li>Укладка ламината</li>
-						<li>Монтаж плинтусов</li>
-						<li>Частичная штукатурка стен</li>
-						<li>Установка подоконников</li>
-						<li>Окраска стен в 2 слоя</li>
-						<li>Облицовка плиткой пола в ванной</li>
-						<li>Облицовка плиткой стен в ванной</li>
-					</ul>
-
-					<p><strong>Срок ремонта:</strong></p>
-
-					<p>24 дня</p>
-
-					<p><strong>Стоимость ремонта:</strong></p>
-
-					<p>450 000 ₽</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="example">
-			<h3 class="example__title">Капитальный ремонт студии 35 м²</h3>
-
-			<div class="example__content">
-				<div class="example__slider">
-					<div class="js-example-4 swiper swiper_example">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="image-compare">
-									<img src="<?= IMG_URL ?>/examples/example-1-before.jpg" loading="lazy" />
-
-									<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
-								</div>
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-
-					<div class="js-example-thumbs-4 swiper swiper_example-thumbs">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-1-after.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-2.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-3.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-4.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-
-							<div class="swiper-slide">
-								<img src="<?= IMG_URL ?>/examples/example-5.jpg" loading="lazy" />
-
-								<div class="swiper-lazy-preloader"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="example__text">
-					<p><strong>Выполненные работы:</strong></p>
-
-					<ul>
-						<li>Стяжка пола до 6 см</li>
-						<li>Укладка ламината</li>
-						<li>Монтаж плинтусов</li>
-						<li>Частичная штукатурка стен</li>
-						<li>Установка подоконников</li>
-						<li>Окраска стен в 2 слоя</li>
-						<li>Облицовка плиткой пола в ванной</li>
-						<li>Облицовка плиткой стен в ванной</li>
-					</ul>
-
-					<p><strong>Срок ремонта:</strong></p>
-
-					<p>24 дня</p>
-
-					<p><strong>Стоимость ремонта:</strong></p>
-
-					<p>450 000 ₽</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<? //endif; ?>
+<? endif; ?>
 

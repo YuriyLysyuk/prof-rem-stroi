@@ -305,6 +305,295 @@
             ]
         },
         {
+            "key": "field_649d90f5c0e56",
+            "label": "Примеры работ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_649d90fcc0e57",
+            "label": "Секция Examples",
+            "name": "examples",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_649d90fcc0e58",
+                    "label": "Показывать секцию",
+                    "name": "show",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_649d90fcc0e59",
+                    "label": "Заголовок",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Что бы выделить часть заголовка, оберните ее в html-тег span.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_649d90fcc0e5a",
+                    "label": "Список работ",
+                    "name": "list",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 2,
+                    "max": 4,
+                    "collapsed": "",
+                    "button_label": "Добавить",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_649d90fcc0e5b",
+                            "label": "Заголовок",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d9225c0e61",
+                            "label": "Срок ремонта",
+                            "name": "repair-period",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d925bc0e62",
+                            "label": "Стоимость ремонта",
+                            "name": "repair-cost",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d916dc0e5f",
+                            "label": "Выполненные работы",
+                            "name": "completed-works",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Добавить",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_649d91c9c0e60",
+                                    "label": "Описание работы",
+                                    "name": "desc",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_649d916dc0e5f"
+                                }
+                            ],
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d928ac0e63",
+                            "label": "Фото до",
+                            "name": "img-before",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Размер: 640x480px Формат: jpg",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": 640,
+                            "min_height": 480,
+                            "min_size": "",
+                            "max_width": 640,
+                            "max_height": 480,
+                            "max_size": "",
+                            "mime_types": "jpg",
+                            "preview_size": "full",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d93e3a716d",
+                            "label": "Фото после",
+                            "name": "img-after",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Размер: 640x480px Формат: jpg",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": 640,
+                            "min_height": 480,
+                            "min_size": "",
+                            "max_width": 640,
+                            "max_height": 480,
+                            "max_size": "",
+                            "mime_types": "jpg",
+                            "preview_size": "full",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        },
+                        {
+                            "key": "field_649d940ea716e",
+                            "label": "Дополнительные фото",
+                            "name": "img-more",
+                            "aria-label": "",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "insert": "append",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_649d90fcc0e5a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "key": "field_643d2d0d1499f",
             "label": "Видео-отзывы",
             "name": "",
@@ -1179,5 +1468,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688042958
+    "modified": 1688049275
 }
