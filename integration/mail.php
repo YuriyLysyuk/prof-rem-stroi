@@ -165,7 +165,7 @@ foreach ( $fields as $name => $options ) {
 }
 
 $contact = [ 
-	'NAME' => $fields['name']['value'],
+	'NAME' => $fields['name']['value'] ?? 'Без имени',
 	'PHONE' => $fields['tel']['value'],
 	'DESCRIPTION' => implode( "\r\n", $description ),
 	'CONTACT_ID' => 0,
@@ -180,7 +180,6 @@ if ( $contact['DESCRIPTION'] != '' ) {
 }
 
 $response['message'] .= ' LEAD_ID: ' . $contact['LEAD_ID'];
-// $response['message'] .= implode( "\r\n", $description );
 
 /**
  * Конец Интеграция с Битрикс 24

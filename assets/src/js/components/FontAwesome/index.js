@@ -18,6 +18,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faFile } from '@fortawesome/free-solid-svg-icons/faFile';
 import { faMessage } from '@fortawesome/free-solid-svg-icons/faMessage';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
 
 const icons = [
   faWhatsapp,
@@ -35,6 +36,7 @@ const icons = [
   faFile,
   faMessage,
   faTelegram,
+  faSpinner,
 ];
 
 library.add(icons);

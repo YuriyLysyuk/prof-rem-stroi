@@ -13,7 +13,14 @@ function onSubmitForm(e) {
   const formAction = '/wp-content/themes/prof-rem-stroi/integration/mail.php';
   const formData = new FormData(form);
 
+  const submitBtn = this.querySelector('[type="submit"]');
+  const spinner = document.createElement('i');
+  spinner.classList.add('js-spinner', 'fa-solid', 'fa-spinner', 'fa-spin');
+  submitBtn.appendChild(spinner);
+
   const errorNode = this.querySelector('.js-error');
+
+  submitBtn.setAttribute('disabled', '');
 
   fetch(formAction, {
     method: 'POST',
@@ -30,7 +37,11 @@ function onSubmitForm(e) {
         showError(errorNode, message);
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error))
+    .finally(() => {
+      submitBtn.removeAttribute('disabled');
+      submitBtn.removeChild(submitBtn.querySelector('.js-spinner'));
+    });
 }
 
 // Показать ошибку
@@ -64,7 +75,7 @@ function redirectToThankYouPage() {
   }
 }
 
-// Срабатывание Яндекс Цели при успешной 
+// Срабатывание Яндекс Цели при успешной
 function reachYMFormGoal() {
   const errors = [];
   const ymNumber = window?.prsOptions?.ym?.number;
