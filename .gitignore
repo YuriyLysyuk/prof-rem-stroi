@@ -1,3 +1,4 @@
 node_modules
 upload_files/*
 !upload_files/index.php
+integration/settings.php
