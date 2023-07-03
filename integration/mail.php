@@ -63,7 +63,7 @@ if ( isset( $_FILES['file'] ) && $_FILES['file']['error'] !== 4 ) {
 		if ( in_array( $fileExtension, $allowedfileExtensions ) ) {
 			// Директория для загрузки смет
 			// ToDo: исправить место сохранения файла в uploads WP
-			$uploadFileDir = './upload_files/';
+			$uploadFileDir = '../upload_files/';
 
 			$destPath = $uploadFileDir . $newFileName;
 
@@ -72,7 +72,7 @@ if ( isset( $_FILES['file'] ) && $_FILES['file']['error'] !== 4 ) {
 
 				$fields['file'] = [ 
 					'label' => 'Смета',
-					'value' => '<a href="' . $url . '" target="_blank">Открыть</a>'
+					'value' => '<a href="' . $url . '" target="_blank">скачать</a>',
 				];
 			} else {
 				// проблема с перемещением загруженного файла
@@ -131,7 +131,6 @@ foreach ( $fields as $name => $options ) {
     </tr>
     ';
 	}
-
 }
 
 $message .= '
@@ -148,14 +147,51 @@ $headers[] = 'Content-type: text/html; charset=utf-8';
 // Отправляем
 if ( mail( $to, $subject, $message, implode( "\r\n", $headers ) ) ) {
 	$response['status'] = 'success';
-	$response['message'] = 'Заявка отправлена';
+	$response['message'] = 'Заявка отправлена.';
 } else {
 	$response['status'] = 'error';
-	$response['message'] = 'Ошибка при отправке заявки';
+	$response['message'] = 'Ошибка при отправке заявки.';
 }
 
+/**
+ * Интеграция с Битрикс 24
+ */
+require_once( 'bitrix24.php' );
+
+$description = [];
+
+foreach ( $fields as $name => $options ) {
+	$description[] = $options['label'] . ': ' . $options['value'];
+}
+
+$contact = [ 
+	'NAME' => $fields['name']['value'],
+	'PHONE' => $fields['tel']['value'],
+	'DESCRIPTION' => implode( "\r\n", $description ),
+	'CONTACT_ID' => 0,
+	'LEAD_ID' => 0,
+];
+
+$contact['CONTACT_ID'] = addContact( $contact );
+$contact['LEAD_ID'] = addLead( $contact );
+
+if ( $contact['DESCRIPTION'] != '' ) {
+	addMessage( $contact );
+}
+
+$response['message'] .= ' LEAD_ID: ' . $contact['LEAD_ID'];
+// $response['message'] .= implode( "\r\n", $description );
+
+/**
+ * Конец Интеграция с Битрикс 24
+ */
+
+// Возвращаем ответ
 send( $response );
 
+/**
+ * Вспомогательные функции
+ */
 function test_input( $data ) {
 	$data = trim( $data );
 	$data = stripslashes( $data );
@@ -165,7 +201,7 @@ function test_input( $data ) {
 
 function send( $response ) {
 	header( "Content-Type: application/json" );
-	echo json_encode( $response );
+	echo json_encode( $response, JSON_UNESCAPED_UNICODE );
 
 	exit();
 }
@@ -178,7 +214,7 @@ function getFileUrl( $filePath ) {
 	// ToDo: исправить место сохранения файла в uploads WP
 	$theme = 'wp-content/themes/prof-rem-stroi';
 
-	$url = $protocol . '://' . $host . '/' . $theme . '/' . str_replace( './', '', $filePath );
+	$url = $protocol . '://' . $host . '/' . $theme . '/' . str_replace( '../', '', $filePath );
 
 	return $url;
 }

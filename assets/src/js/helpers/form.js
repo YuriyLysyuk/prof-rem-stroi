@@ -10,7 +10,7 @@ function onSubmitForm(e) {
   e.preventDefault();
 
   const form = this;
-  const formAction = '/wp-content/themes/prof-rem-stroi/mail.php';
+  const formAction = '/wp-content/themes/prof-rem-stroi/integration/mail.php';
   const formData = new FormData(form);
 
   const errorNode = this.querySelector('.js-error');
@@ -30,7 +30,7 @@ function onSubmitForm(e) {
         showError(errorNode, message);
       }
     })
-    .catch((error) => console.log('Error: ', error));
+    .catch((error) => console.log(error));
 }
 
 // Показать ошибку
