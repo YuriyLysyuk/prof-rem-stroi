@@ -25,7 +25,9 @@ function addLead( $contact ) {
 		'fields' => [ 
 			'TITLE' => BITRIX24_LEAD_TITLE,
 			'STAGE_ID' => 'NEW',
-			'CONTACT_ID' => $contact['CONTACT_ID'],
+      'NAME' => $contact['NAME'],
+      'PHONE' => [ [ 'VALUE' => $contact['PHONE'], 'VALUE_TYPE' => 'WORK' ] ],
+			// 'CONTACT_ID' => $contact['CONTACT_ID'],
 			'SOURCE_ID' => BITRIX24_LEAD_SOURCE_ID,
 		], 'params' => [ 
 			'REGISTER_SONET_EVENT' => 'Y'

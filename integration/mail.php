@@ -172,7 +172,7 @@ $contact = [
 	'LEAD_ID' => 0,
 ];
 
-$contact['CONTACT_ID'] = addContact( $contact );
+// $contact['CONTACT_ID'] = addContact( $contact );
 $contact['LEAD_ID'] = addLead( $contact );
 
 if ( $contact['DESCRIPTION'] != '' ) {
